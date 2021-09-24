@@ -51,7 +51,6 @@ module.exports = {
             module: true,
             passes: 3,
             unsafe: true,
-            unsafe_arrows: true,
             unsafe_comps: true,
             unsafe_math: true,
             unsafe_methods: true,
