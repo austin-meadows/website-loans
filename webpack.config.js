@@ -129,7 +129,7 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: [".ts"],
+    extensions: [".ts", ".js"],
     modules: [paths.src, "node_modules"],
   },
   target: "browserslist",
