@@ -13,7 +13,6 @@ const paths = {
 module.exports = {
   devServer: {
     compress: true,
-    contentBase: paths.dist,
     historyApiFallback: true,
   },
   devtool: false,
