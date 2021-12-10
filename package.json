@@ -1,7 +1,7 @@
 {
   "author": "Austin Meadows",
   "dependencies": {
-    "@vaadin/router": "^1.7.4",
+    "@vaadin/router": "1.7.4",
     "lit": "2.0.2"
   },
   "description": "Peer-to-peer student loan crowdfunding platform.",
@@ -13,13 +13,15 @@
     "compression-webpack-plugin": "9.1.1",
     "cross-env": "7.0.3",
     "eslint": "8.4.1",
-    "eslint-config-airbnb": "19.0.2",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-airbnb-typescript": "16.1.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-prettier": "4.0.0",
     "html-webpack-plugin": "5.5.0",
     "ts-loader": "9.2.6",
     "typescript": "4.5.3",
     "webpack": "5.65.0",
+    "webpack-bundle-analyzer": "4.5.0",
     "webpack-cli": "4.9.1",
     "webpack-dev-server": "4.6.0"
   },
@@ -30,7 +32,8 @@
   "private": true,
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
-    "serve": "cross-env NODE_ENV=production webpack serve"
+    "lint": "eslint **/*.ts",
+    "serve": "cross-env NODE_ENV=development webpack serve"
   },
-  "version": "1.0.0"
+  "version": "0.1.0"
 }

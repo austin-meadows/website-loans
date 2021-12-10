@@ -1,8 +1,8 @@
 import { LitElement, css, html } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement, property } from "lit/decorators";
 
 @customElement("app-root")
-export class App extends LitElement {
+export default class App extends LitElement {
   // Define scoped styles right with your component, in plain CSS
   static styles = css`
     :host {

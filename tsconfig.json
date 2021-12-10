@@ -4,5 +4,5 @@
   },
   "extends": "@tsconfig/node16/tsconfig.json",
   "include": ["src/**/*"],
-  "sourceMap": true,
+  "sourceMap": true
 }

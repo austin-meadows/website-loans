@@ -23,7 +23,7 @@ module.exports = {
     },
     lit: "lit",
   },
-  mode: "production",
+  mode: process.env.NODE_ENV,
   module: {
     rules: [
       {
