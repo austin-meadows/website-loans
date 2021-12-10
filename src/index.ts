@@ -1,5 +1,6 @@
-import { Router } from "@vaadin/router";
 import "./app";
+
+import { Router } from "@vaadin/router";
 
 const outlet = document.getElementById("main");
 const router = new Router(outlet);

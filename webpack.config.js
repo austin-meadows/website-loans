@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 const paths = {
   dist: path.resolve("dist"),
@@ -22,6 +23,7 @@ module.exports = {
       import: path.resolve(paths.src, "index.ts"),
     },
     lit: "lit",
+    router: "@vaadin/router",
   },
   mode: process.env.NODE_ENV,
   module: {
@@ -126,6 +128,8 @@ module.exports = {
       inject: true,
       template: path.resolve(paths.src, "index.html"),
     }),
+    process.env.NODE_ENV === "production" &&
+      new BundleAnalyzerPlugin({ analyzerMode: "static" }),
   ],
   resolve: {
     extensions: [".ts", ".js"],
