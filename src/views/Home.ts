@@ -3,7 +3,7 @@ import { customElement } from "lit/decorators.js";
 
 @customElement("v-home")
 export default class Home extends LitElement {
-  render() {
+  protected render() {
     return html`<p>Testing</p>`;
   }
 }

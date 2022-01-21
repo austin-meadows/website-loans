@@ -31,14 +31,13 @@ export default {
       patterns: ["images/**/*"],
     }),
   ],
-  input: "src/index.ts",
+  input: "src/app.ts",
   output: {
     dir: "build",
     compact: true,
     manualChunks: {
       lit: ["lit"],
-      router: ["@vaadin/router"],
+      router: ["lit-element-router"],
     },
   },
-  preserveEntrySignatures: "strict",
 };
