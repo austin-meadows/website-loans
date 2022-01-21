@@ -34,6 +34,11 @@ export default {
   input: "src/index.ts",
   output: {
     dir: "build",
+    compact: true,
+    manualChunks: {
+      lit: ["lit"],
+      router: ["@vaadin/router"],
+    },
   },
   preserveEntrySignatures: "strict",
 };
