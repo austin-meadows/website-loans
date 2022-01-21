@@ -9,31 +9,23 @@
     "@tsconfig/node16": "1.0.2",
     "@typescript-eslint/eslint-plugin": "5.10.0",
     "@typescript-eslint/parser": "5.10.0",
-    "clean-webpack-plugin": "4.0.0",
-    "compression-webpack-plugin": "9.2.0",
     "cross-env": "7.0.3",
     "eslint": "8.7.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-config-airbnb-typescript": "16.1.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-prettier": "4.0.0",
-    "html-webpack-plugin": "5.5.0",
     "ts-loader": "9.2.6",
-    "typescript": "4.5.5",
-    "webpack": "5.66.0",
-    "webpack-bundle-analyzer": "4.5.0",
-    "webpack-cli": "4.9.1",
-    "webpack-dev-server": "4.7.3"
+    "typescript": "4.5.5"
   },
   "engines": {
-    "node": ">=16.13.1"
+    "node": ">=16.13.2",
+    "npm": ">=8.3.2"
   },
   "name": "website-loans",
   "private": true,
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack",
-    "lint": "eslint **/*.ts",
-    "serve": "cross-env NODE_ENV=development webpack serve"
+    "lint": "eslint **/*.ts"
   },
   "version": "0.1.0"
 }
