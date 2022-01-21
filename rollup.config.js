@@ -11,6 +11,7 @@ export default {
   plugins: [
     html({
       input: "src/index.html",
+      minify: true,
     }),
     typescript(),
 
