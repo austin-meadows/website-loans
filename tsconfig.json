@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "removeComments": true
   },
   "extends": "@tsconfig/node16/tsconfig.json",
-  "include": ["src/**/*"],
-  "sourceMap": true
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
 }
