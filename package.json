@@ -1,8 +1,8 @@
 {
   "author": "Austin Meadows",
   "dependencies": {
-    "lit": "2.1.1",
-    "lit-element-router": "2.0.3"
+    "@vaadin/router": "1.7.4",
+    "lit": "2.1.1"
   },
   "description": "Peer-to-peer student loan crowdfunding platform.",
   "devDependencies": {
@@ -14,6 +14,7 @@
     "@web/dev-server": "0.1.29",
     "@web/rollup-plugin-copy": "0.3.0",
     "@web/rollup-plugin-html": "1.10.1",
+    "concurrently": "7.0.0",
     "cross-env": "7.0.3",
     "eslint": "8.7.0",
     "eslint-config-airbnb-base": "15.0.0",
@@ -35,9 +36,13 @@
   "name": "website-loans",
   "private": true,
   "scripts": {
-    "build": "cross-env NODE_ENV=production rimraf build; rollup -c",
-    "serve": "web-dev-server --node-resolve --app-index build/index.html --root-dir build --open",
-    "lint": "eslint **/*.ts"
+    "_build": "cross-env NODE_ENV=production rollup -c",
+    "_clean": "rimraf build",
+    "_serve": "web-dev-server --node-resolve --app-index build/index.html --root-dir build --open",
+    "_watch": "rollup -c -w",
+    "build": "npm run _clean && npm run _build",
+    "lint": "eslint **/*.ts",
+    "serve": "npm run _clean && concurrently npm:_watch npm:_serve"
   },
   "version": "0.1.0"
 }

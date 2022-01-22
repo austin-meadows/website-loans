@@ -23,9 +23,7 @@
     "@typescript-eslint/no-unused-vars": "error",
     "class-methods-use-this": "off",
     "prettier/prettier": "error",
-    // Do not use extensions unless there is Lit bullshit.
-    // There is no way I am aware of to disable extensions except for
-    // Lit.
+    // Lit seems to ununiformly enforce .js imports
     "import/extensions": "off",
     "sort-imports": "error"
   }
