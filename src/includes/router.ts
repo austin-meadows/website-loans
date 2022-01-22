@@ -4,13 +4,13 @@ const router = new Router(document.body);
 router.setRoutes([
   {
     path: "/",
-    component: "app-root",
+    component: "x-app",
     children: [
       {
         path: "/",
         component: "v-home",
         action: async () => {
-          await import("./views/Home");
+          await import("../views/Home");
         },
       },
     ],
