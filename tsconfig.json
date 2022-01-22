@@ -1,9 +1,13 @@
 {
   "compilerOptions": {
     "experimentalDecorators": true,
-    "removeComments": true
+    "incremental": true,
+    "lib": ["DOM", "ES2021"],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "rootDir": "./",
+    "strict": true,
+    "target": "ES2021"
   },
-  "exclude": ["node_modules"],
-  "extends": "@tsconfig/node16/tsconfig.json",
   "include": ["src/**/*.ts"]
 }

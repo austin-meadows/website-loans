@@ -6,24 +6,29 @@ import minifyHTML from "rollup-plugin-minify-html-literals";
 import { terser } from "rollup-plugin-terser";
 import summary from "rollup-plugin-summary";
 
+import { version } from "./package.json";
+
 const isProd = process.env.NODE_ENV === "production";
 
 export default {
-  input: "src/app.ts",
+  input: "index.html",
   output: {
     dir: "build",
     manualChunks: {
       lit: ["lit"],
       router: ["@vaadin/router"],
     },
+    chunkFileNames: `[name]-${version}.js`,
     sourcemap: !isProd,
   },
   plugins: [
     html({
-      input: "src/index.html",
+      transformHtml: [(html) => html.replaceAll("{{version}}", version)],
       minify: isProd,
     }),
-    typescript(),
+    typescript({
+      outputToFilesystem: false,
+    }),
     resolve(),
     copy({
       patterns: ["images/**/*"],
@@ -40,4 +45,5 @@ export default {
       }),
     isProd && summary(),
   ],
+  preserveEntrySignatures: false,
 };
