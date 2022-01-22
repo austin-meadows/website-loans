@@ -19,9 +19,6 @@ import { version } from "./package.json";
 const isProd = process.env.NODE_ENV === "production";
 const plugins = {
   default: [
-    pluginDel({
-      targets: "./build",
-    }),
     pluginResolve(),
 
     pluginHtml({
@@ -56,6 +53,9 @@ const plugins = {
   ],
 };
 export default [
+  {
+    plugins: [pluginDel({ targets: "./build" })],
+  },
   {
     input: "src/www/index.html",
     output: {
