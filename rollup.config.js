@@ -19,6 +19,7 @@ export default {
       router: ["@vaadin/router"],
     },
     chunkFileNames: `[name]-${version}.js`,
+    entryFileNames: `[name]-${version}.js`,
     sourcemap: !isProd,
   },
   plugins: [
