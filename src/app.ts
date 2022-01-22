@@ -9,6 +9,7 @@ export default class App extends LitElement {
     return html`
       <nav>
         <a href="/">Home</a>
+        <a href="/sign-in">Sign In</a>
       </nav>
       <main>
         <slot></slot>
