@@ -7,7 +7,7 @@ import style from "./app.scss";
 
 @customElement("x-app")
 export default class App extends LitElement {
-  static styles = style;
+  static readonly styles = style;
 
   protected render() {
     return html`

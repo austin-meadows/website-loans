@@ -13,6 +13,13 @@ router.setRoutes([
           await import("../views/Home");
         },
       },
+      {
+        path: "/sign-in",
+        component: "v-signin",
+        action: async () => {
+          await import("../views/SignIn");
+        },
+      },
     ],
   },
 ]);
