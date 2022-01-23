@@ -12,7 +12,7 @@ enum TYPE {
 export default class Home extends LitElement {
   static readonly styles = style;
 
-  @property({ type: Number }) type: TYPE = 0;
+  @property({ type: Number }) type: TYPE = TYPE.PRIMARY;
 
   protected render() {
     return html`<button class="button ${this.type}"><slot></slot></button>`;

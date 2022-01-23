@@ -3,10 +3,9 @@ import pluginTypescript from "@rollup/plugin-typescript";
 import pluginHtml from "@web/rollup-plugin-html";
 import autoprefixer from "autoprefixer";
 import csso from "postcss-csso";
+import pluginStylesLit from "rollup-plugin-lit-css";
 import pluginLiterals from "rollup-plugin-minify-html-literals";
 import pluginStyles from "rollup-plugin-styles";
-import pluginStylesLit from "rollup-plugin-lit-css";
-import pluginSummary from "rollup-plugin-summary";
 import { terser as pluginTerser } from "rollup-plugin-terser";
 
 import { version } from "./package.json";
@@ -53,12 +52,11 @@ export default [
           },
           module: true,
         }),
-      isProd && pluginSummary(),
     ],
     preserveEntrySignatures: false,
     treeshake: {
-      preset: "smallest",
       moduleSideEffects: true,
+      preset: "smallest",
     },
   },
   {
@@ -74,7 +72,6 @@ export default [
         plugins: [autoprefixer(), isProd && csso()].filter(Boolean),
         sourceMap: isProd ? false : "inline",
       }),
-      isProd && pluginSummary(),
     ],
   },
 ];
