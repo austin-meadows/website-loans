@@ -23,8 +23,8 @@
     "eslint-plugin-lit": "1.6.1",
     "eslint-plugin-prettier": "4.0.0",
     "postcss-normalize": "10.0.1",
+    "rimraf": "3.0.2",
     "rollup": "2.66.0",
-    "rollup-plugin-delete": "2.0.0",
     "rollup-plugin-minify-html-literals": "1.2.6",
     "rollup-plugin-postcss": "4.0.2",
     "rollup-plugin-postcss-lit": "2.0.0",
@@ -42,11 +42,12 @@
   "name": "website-loans",
   "private": true,
   "scripts": {
+    "_clean": "rimraf build",
     "_watch--build": "serve -s build",
     "_watch--serve": "rollup -c -w",
-    "build": "cross-env NODE_ENV=production rollup -c",
+    "build": "npm run _clean && cross-env NODE_ENV=production rollup -c",
     "lint": "eslint **/*.ts",
-    "serve": "concurrently npm:_watch--*"
+    "serve": "npm run _clean && concurrently npm:_watch--*"
   },
   "version": "0.1.0"
 }
