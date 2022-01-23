@@ -10,10 +10,10 @@ import { terser as pluginTerser } from "rollup-plugin-terser";
 
 import { version } from "./package.json";
 
-const isProd = process.env.NODE_ENV === "production";
+const isWatch = process.env.WATCH === "true";
 export default [
   {
-    input: "src/www/index.html",
+    input: "src/index.html",
     output: {
       chunkFileNames: `[name]-${version}.js`,
       dir: "build",
@@ -22,36 +22,61 @@ export default [
         lit: ["lit"],
         router: ["@vaadin/router"],
       },
-      sourcemap: !isProd,
-      validate: isProd,
+      sourcemap: false,
+      validate: true,
     },
     plugins: [
       pluginResolve(),
       pluginHtml({
         extractAssets: false,
-        minify: isProd,
+        minify: true,
         transformHtml: [(html) => html.replace(/{{version}}/g, version)],
       }),
       pluginTypescript({ outputToFilesystem: false }),
       pluginStyles({
         extensions: [".scss"],
         mode: "emit",
-        plugins: [autoprefixer(), isProd && csso()].filter(Boolean),
-        sourceMap: isProd ? false : "inline",
+        plugins: [autoprefixer(), csso()].filter(Boolean),
+        sourceMap: false,
       }),
       pluginStylesLit({
         include: ["**/*.scss"],
       }),
-      isProd && pluginLiterals(),
-      isProd &&
-        pluginTerser({
-          ecma: 2020,
-          format: {
-            comments: false,
-            wrap_func_args: false,
-          },
+      pluginLiterals(),
+      pluginTerser({
+        compress: {
+          booleans_as_integers: true,
+          drop_console: !isWatch,
+          ecma: 2021,
+          hoist_props: true,
+          keep_fargs: false,
           module: true,
-        }),
+          passes: 2,
+          toplevel: true,
+          unsafe: true,
+          unsafe_arrows: true,
+          unsafe_comps: true,
+          unsafe_Function: true,
+          unsafe_math: true,
+          unsafe_methods: true,
+          unsafe_proto: true,
+          unsafe_regexp: true,
+          unsafe_symbols: true,
+          unsafe_undefined: true,
+        },
+        ecma: 2021,
+        format: {
+          comments: false,
+          ecma: 2021,
+          wrap_func_args: false,
+        },
+        mangle: {
+          properties: {
+            regex: /^_/,
+          },
+        },
+        module: true,
+      }),
     ],
     preserveEntrySignatures: false,
     treeshake: {
@@ -60,7 +85,7 @@ export default [
     },
   },
   {
-    input: "src/www/index.scss",
+    input: "src/index.scss",
     output: {
       assetFileNames: "[name][extname]",
       dir: "build",
@@ -69,8 +94,8 @@ export default [
       pluginStyles({
         extensions: [".scss"],
         mode: "extract",
-        plugins: [autoprefixer(), isProd && csso()].filter(Boolean),
-        sourceMap: isProd ? false : "inline",
+        plugins: [autoprefixer(), csso()].filter(Boolean),
+        sourceMap: false,
       }),
     ],
   },

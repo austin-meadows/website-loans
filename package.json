@@ -42,8 +42,8 @@
   "scripts": {
     "_clean": "rimraf build",
     "_watch--build": "serve -s build",
-    "_watch--serve": "rollup -c -w",
-    "build": "npm run _clean && cross-env NODE_ENV=production rollup -c",
+    "_watch--serve": "cross-env WATCH=true rollup -c -w",
+    "build": "npm run _clean && rollup -c",
     "lint": "eslint **/*.ts",
     "serve": "npm run _clean && concurrently npm:_watch--*"
   },

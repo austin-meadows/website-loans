@@ -19,13 +19,15 @@
   },
   "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
-    "@typescript-eslint/no-explicit-any": "error",
-    "@typescript-eslint/no-unused-vars": "error",
+    // turn on rules for ordering class properties and methods
     "@typescript-eslint/member-ordering": "error",
+    // render methods won't always do this
     "class-methods-use-this": "off",
     // Lit seems to ununiformly enforce .js imports
     "import/extensions": "off",
+    // ts yells at you if this happens, baut make eslint do it too
     "import/no-unresolved": "error",
+    // Make import statements need to be alphebetized
     "import/order": [
       "error",
       {
@@ -36,7 +38,13 @@
         "newlines-between": "always"
       }
     ],
+    // console statements are removed during minification,
+    // so turn this off. Only useful console statements should
+    // be committed though.
+    "no-console": "off",
+    // Shows prettier errors
     "prettier/prettier": "error",
+    // Require JS object keys to be sorted
     "sort-keys": "error"
   }
 }
