@@ -4,28 +4,39 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:import/typescript",
     "airbnb-base",
     "airbnb-typescript/base",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:lit/recommended",
     "prettier",
-    "plugin:prettier/recommended",
-    "plugin:lit/recommended"
+    "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVaersion": "latest",
-    "project": ["tsconfig.json"],
+    "project": "./tsconfig.json",
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/member-ordering": "error",
     "class-methods-use-this": "off",
-    "prettier/prettier": "error",
     // Lit seems to ununiformly enforce .js imports
     "import/extensions": "off",
-    "sort-imports": "error"
+    "import/no-unresolved": "error",
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "caseInsensitive": true,
+          "order": "asc"
+        },
+        "newlines-between": "always"
+      }
+    ],
+    "prettier/prettier": "error",
+    "sort-keys": "error"
   }
 }

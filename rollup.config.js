@@ -1,17 +1,14 @@
 import pluginResolve from "@rollup/plugin-node-resolve";
 import pluginTypescript from "@rollup/plugin-typescript";
-
 import pluginHtml from "@web/rollup-plugin-html";
-
+import autoprefixer from "autoprefixer";
+import csso from "postcss-csso";
+import normalize from "postcss-normalize";
 import pluginLiterals from "rollup-plugin-minify-html-literals";
 import pluginPostCSS from "rollup-plugin-postcss";
 import pluginPostCSSLit from "rollup-plugin-postcss-lit";
 import pluginSummary from "rollup-plugin-summary";
 import { terser as pluginTerser } from "rollup-plugin-terser";
-
-import autoprefixer from "autoprefixer";
-import csso from "postcss-csso";
-import normalize from "postcss-normalize";
 
 import { version } from "./package.json";
 
@@ -32,9 +29,9 @@ export default [
     plugins: [
       pluginResolve(),
       pluginHtml({
-        transformHtml: [(html) => html.replace(/{{version}}/g, version)],
-        minify: isProd,
         extractAssets: false,
+        minify: isProd,
+        transformHtml: [(html) => html.replace(/{{version}}/g, version)],
       }),
       pluginTypescript({ outputToFilesystem: false }),
       pluginPostCSS({
@@ -46,11 +43,11 @@ export default [
       isProd &&
         pluginTerser({
           ecma: 2020,
-          module: true,
           format: {
             comments: false,
             wrap_func_args: false,
           },
+          module: true,
         }),
       isProd && pluginSummary({ showGzippedSize: false }),
     ],
@@ -62,9 +59,9 @@ export default [
       file: "build/index.css",
     },
     plugins: pluginPostCSS({
+      extract: true,
       plugins: [autoprefixer(), normalize(), isProd && csso()].filter(Boolean),
       sourceMap: isProd ? false : "inline",
-      extract: true,
     }),
   },
 ];
