@@ -3,10 +3,9 @@ import pluginTypescript from "@rollup/plugin-typescript";
 import pluginHtml from "@web/rollup-plugin-html";
 import autoprefixer from "autoprefixer";
 import csso from "postcss-csso";
-import normalize from "postcss-normalize";
 import pluginLiterals from "rollup-plugin-minify-html-literals";
-import pluginPostCSS from "rollup-plugin-postcss";
-import pluginPostCSSLit from "rollup-plugin-postcss-lit";
+import pluginStyles from "rollup-plugin-styles";
+import pluginStylesLit from "rollup-plugin-lit-css";
 import pluginSummary from "rollup-plugin-summary";
 import { terser as pluginTerser } from "rollup-plugin-terser";
 
@@ -18,13 +17,14 @@ export default [
     input: "src/www/index.html",
     output: {
       chunkFileNames: `[name]-${version}.js`,
-      dir: "./build",
+      dir: "build",
       entryFileNames: `[name]-${version}.js`,
       manualChunks: {
         lit: ["lit"],
         router: ["@vaadin/router"],
       },
       sourcemap: !isProd,
+      validate: isProd,
     },
     plugins: [
       pluginResolve(),
@@ -34,11 +34,16 @@ export default [
         transformHtml: [(html) => html.replace(/{{version}}/g, version)],
       }),
       pluginTypescript({ outputToFilesystem: false }),
-      pluginPostCSS({
+      pluginStyles({
+        extensions: [".scss"],
+        minimize: isProd,
+        mode: "emit",
         plugins: [autoprefixer(), isProd && csso()].filter(Boolean),
         sourceMap: isProd ? false : "inline",
       }),
-      pluginPostCSSLit(),
+      pluginStylesLit({
+        include: ["**/*.scss"],
+      }),
       isProd && pluginLiterals(),
       isProd &&
         pluginTerser({
@@ -49,19 +54,29 @@ export default [
           },
           module: true,
         }),
-      isProd && pluginSummary({ showGzippedSize: false }),
+      isProd && pluginSummary(),
     ],
     preserveEntrySignatures: false,
+    treeshake: {
+      preset: "smallest",
+      moduleSideEffects: true,
+    },
   },
   {
     input: "src/www/index.scss",
     output: {
-      file: "build/index.css",
+      assetFileNames: "[name][extname]",
+      dir: "build",
     },
-    plugins: pluginPostCSS({
-      extract: true,
-      plugins: [autoprefixer(), normalize(), isProd && csso()].filter(Boolean),
-      sourceMap: isProd ? false : "inline",
-    }),
+    plugins: [
+      pluginStyles({
+        extensions: [".scss"],
+        minimize: isProd,
+        mode: "extract",
+        plugins: [autoprefixer(), isProd && csso()].filter(Boolean),
+        sourceMap: isProd ? false : "inline",
+      }),
+      isProd && pluginSummary(),
+    ],
   },
 ];
