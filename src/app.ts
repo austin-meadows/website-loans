@@ -7,7 +7,7 @@ import { customElement } from "lit/decorators.js";
 export default class App extends LitElement {
   protected render() {
     return html`
-      <l-nav></l-nav>
+      <l-navigation></l-navigation>
       <main>
         <slot></slot>
       </main>

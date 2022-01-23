@@ -36,7 +36,6 @@ export default [
       pluginTypescript({ outputToFilesystem: false }),
       pluginStyles({
         extensions: [".scss"],
-        minimize: isProd,
         mode: "emit",
         plugins: [autoprefixer(), isProd && csso()].filter(Boolean),
         sourceMap: isProd ? false : "inline",
@@ -71,7 +70,6 @@ export default [
     plugins: [
       pluginStyles({
         extensions: [".scss"],
-        minimize: isProd,
         mode: "extract",
         plugins: [autoprefixer(), isProd && csso()].filter(Boolean),
         sourceMap: isProd ? false : "inline",

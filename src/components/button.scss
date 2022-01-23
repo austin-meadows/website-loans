@@ -5,9 +5,8 @@
   cursor: pointer;
   color: #0d0b30;
   display: inline-flex;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Ubuntu;
-  font-size: 1rem;
+  font-size: var(--font-size);
+  font-family: var(--font-family);
   min-height: 36px;
   padding: 4px 12px 8px;
   position: relative;
