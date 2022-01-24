@@ -6,14 +6,14 @@ router.setRoutes([
     children: [
       {
         action: async () => {
-          await import("../views/Home");
+          await import("../../views/Home");
         },
         component: "v-home",
         path: "/",
       },
       {
         action: async () => {
-          await import("../views/SignIn");
+          await import("../../views/SignIn");
         },
         component: "v-signin",
         path: "/sign-in",

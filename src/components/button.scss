@@ -1,9 +1,11 @@
+@use "../config/scss/colors";
+
 .button {
   align-items: center;
   background-color: transparent;
   border: 0;
   cursor: pointer;
-  color: #0d0b30;
+  color: var(--color-black);
   display: inline-flex;
   font-size: var(--font-size);
   font-family: var(--font-family);
@@ -11,47 +13,57 @@
   padding: 4px 12px 8px;
   position: relative;
   z-index: 1;
-}
-.button:focus {
-  outline: none;
-}
-.button:before {
-  content: "";
-  display: block;
-  box-sizing: border-box;
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  border-radius: 3px;
-  border: 1px solid #9999ac;
-  background-color: #fff;
-  box-shadow: 0 4px 3px 0 rgba(20, 20, 96, 0.1), inset 0 -5px 0 0 #ebebf6;
-}
-.button:active {
-  border-top: 4px solid transparent;
-  padding: 4px 12px;
-}
-.button:active:before,
-.button:hover:active:before {
-  box-shadow: none;
-}
-.button:focus:before {
-  outline: 4px solid #fc440f;
-}
-.button:focus:not(:focus-visible):before {
-  outline: none;
-}
-.button:focus-visible:before {
-  outline: 4px solid #fc440f;
-}
-.button:hover:before {
-  box-shadow: 0 4px 3px 0 rgba(20, 20, 96, 0.1), inset 0 -5px 0 0 #c2b3ff;
-}
-.button:active:before,
-.button:hover:before {
-  background-color: #e0d9ff;
-  border-color: #8566fe;
+
+  &:active {
+    border-top: 4px solid transparent;
+    padding: 4px 12px;
+  }
+  &:focus {
+    outline: none;
+
+    &::before {
+      outline: 4px solid #fc440f;
+    }
+
+    &:not(:focus-visible)::before {
+      outline: none;
+    }
+  }
+  &:focus-visible {
+    outline: 4px solid #fc440f;
+  }
+  &:hover {
+    &::before {
+      box-shadow: 0 4px 3px 0 adjust-color(colors.$black, $alpha: -0.92),
+        inset 0 -5px 0 0 adjust-color(colors.$primary, $lightness: 10%);
+    }
+  }
+
+  &:active::before,
+  &:hover:active::before {
+    box-shadow: none;
+  }
+
+  &:active::before,
+  &:hover::before {
+    background-color: adjust-color(colors.$primary, $lightness: 20%);
+    border-color: adjust-color(colors.$white, $lightness: -43%);
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid adjust-color(colors.$white, $lightness: -33%);
+    background-color: var(--color-white);
+    box-shadow: 0 4px 3px 0 adjust-color(colors.$black, $alpha: -0.9),
+      inset 0 -5px 0 0 adjust-color(colors.$primary, $lightness: 20%);
+  }
 }
