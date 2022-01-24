@@ -9,7 +9,7 @@ enum TYPE {
   TERTIARY,
 }
 @customElement("c-button")
-export default class Home extends LitElement {
+export default class Button extends LitElement {
   static readonly styles = style;
 
   @property({ type: Number }) type: TYPE = TYPE.PRIMARY;

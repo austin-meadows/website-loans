@@ -1,0 +1,21 @@
+:host {
+  display: inline-block;
+}
+
+#nav {
+  margin: 0 10px;
+
+  // > .nav-link {
+  //   &:first-child {
+  //     margin-right: 1.5px;
+  //   }
+  //   & + .nav-link {
+  //     margin: 0 3px;
+  //   }
+
+  //   &:last-child {
+  //     margin-left: 3px;
+  //     margin-right: 0;
+  //   }
+  // }
+}

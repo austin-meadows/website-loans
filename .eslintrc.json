@@ -45,6 +45,8 @@
     // Shows prettier errors
     "prettier/prettier": "error",
     // Require JS object keys to be sorted
-    "sort-keys": "error"
+    "sort-keys": "error",
+    // Allow underscore dangle to denote private methods
+    "no-underscore-dangle": "off"
   }
 }

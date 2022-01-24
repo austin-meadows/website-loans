@@ -1,0 +1,38 @@
+@use "../config/scss/colors";
+
+:host {
+  display: inline;
+}
+
+.link {
+  border-radius: 5px;
+  color: var(--color-link);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: adjust-color(colors.$link, $lightness: 20%);
+
+  &:active {
+    background-color: adjust-color(colors.$link, $lightness: 50%);
+  }
+}
+
+:host(.nav-link) {
+  display: inline-block;
+
+  .link {
+    color: var(--color-black);
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+    text-decoration-thickness: 3px;
+  }
+}
+
+// TODO: better way to do this?
+// JS might let me add class to shadow dom link,
+// may not wanna do that tho anyways in favor of this
+:host(.nav-link.active) {
+  .link {
+    background: adjust-color(colors.$link, $lightness: 50%);
+    text-decoration: underline;
+  }
+}

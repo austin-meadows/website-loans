@@ -1,41 +1,37 @@
 @use "../config/scss/colors";
 
+$_border-height: 4px;
+$_lightness-factor: 20%;
+
+:host {
+  display: inline-block;
+}
+
 .button {
   align-items: center;
   background-color: transparent;
   border: 0;
   cursor: pointer;
   color: var(--color-black);
-  display: inline-flex;
   font-size: var(--font-size);
   font-family: var(--font-family);
   min-height: 36px;
-  padding: 4px 12px 8px;
+  padding: $_border-height 12px $_border-height * 2;
   position: relative;
+  user-select: none;
+  vertical-align: bottom;
   z-index: 1;
 
   &:active {
-    border-top: 4px solid transparent;
-    padding: 4px 12px;
-  }
-  &:focus {
-    outline: none;
-
-    &::before {
-      outline: 4px solid #fc440f;
-    }
-
-    &:not(:focus-visible)::before {
-      outline: none;
-    }
-  }
-  &:focus-visible {
-    outline: 4px solid #fc440f;
+    border-top: $_border-height solid transparent;
+    padding: $_border-height 12px;
   }
   &:hover {
     &::before {
-      box-shadow: 0 4px 3px 0 adjust-color(colors.$black, $alpha: -0.92),
-        inset 0 -5px 0 0 adjust-color(colors.$primary, $lightness: 10%);
+      box-shadow: 0 $_border-height $_border-height 0
+          adjust-color(colors.$black, $alpha: -0.92),
+        inset 0 (-$_border-height)-1px 0 0
+          adjust-color(colors.$primary, $lightness: $_lightness-factor * 0.5);
     }
   }
 
@@ -46,24 +42,35 @@
 
   &:active::before,
   &:hover::before {
-    background-color: adjust-color(colors.$primary, $lightness: 20%);
-    border-color: adjust-color(colors.$white, $lightness: -43%);
+    background-color: adjust-color(
+      colors.$primary,
+      $lightness: $_lightness-factor
+    );
+    border-color: adjust-color(
+      colors.$primary,
+      $lightness: -$_lightness-factor * 0.5
+    );
   }
 
   &::before {
+    background-color: adjust-color(
+      colors.$primary,
+      $lightness: $_lightness-factor * 1.5
+    );
+    border-radius: 5px;
+    border: 1px solid var(--color-primary);
+    box-shadow: 0 $_border-height 10px 0
+        adjust-color(colors.$black, $alpha: -0.9),
+      inset 0 (-$_border-height)-1px 0 0
+        adjust-color(colors.$primary, $lightness: $_lightness-factor);
+    box-sizing: border-box;
     content: "";
     display: block;
-    box-sizing: border-box;
-    z-index: -1;
+    height: 100%;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
-    height: 100%;
     width: 100%;
-    border-radius: 3px;
-    border: 1px solid adjust-color(colors.$white, $lightness: -33%);
-    background-color: var(--color-white);
-    box-shadow: 0 4px 3px 0 adjust-color(colors.$black, $alpha: -0.9),
-      inset 0 -5px 0 0 adjust-color(colors.$primary, $lightness: 20%);
+    z-index: -1;
   }
 }

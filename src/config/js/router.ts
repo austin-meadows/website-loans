@@ -18,6 +18,13 @@ router.setRoutes([
         component: "v-signin",
         path: "/sign-in",
       },
+      {
+        action: async () => {
+          await import("../../views/Storyboard");
+        },
+        component: "v-storyboard",
+        path: "/storyboard",
+      },
     ],
     component: "s-app",
     path: "/",
