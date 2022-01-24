@@ -9,10 +9,10 @@
   color: var(--color-link);
   text-decoration: underline;
   text-decoration-thickness: 2px;
-  text-decoration-color: adjust-color(colors.$link, $lightness: 25%);
+  text-decoration-color: adjust-color(colors.$link, $lightness: 33%);
 
   &:active {
-    background-color: adjust-color(colors.$link, $lightness: 50%);
+    background-color: adjust-color(colors.$link, $lightness: 33%);
   }
 }
 
