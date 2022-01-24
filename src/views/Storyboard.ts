@@ -1,8 +1,9 @@
-import "../components/button";
 import "../components/link";
 
 import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
+
+import { TYPE } from "../components/button";
 
 @customElement("v-storyboard")
 export default class Storyboard extends LitElement {
@@ -11,7 +12,7 @@ export default class Storyboard extends LitElement {
       <h1>Button</h1>
       <div>
         <c-button>Button Primary</c-button>
-        <c-button>Button Secondary</c-button>
+        <c-button type="${TYPE.SECONDARY}">Button Secondary</c-button>
         <c-button>Button Tertiary</c-button>
       </div>
 

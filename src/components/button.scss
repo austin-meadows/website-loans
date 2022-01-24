@@ -1,18 +1,17 @@
 @use "../config/scss/colors";
 
 $_border-height: 4px;
-$_lightness-factor: 20%;
 
 :host {
   display: inline-block;
 }
 
+// Sizes config
 .button {
   align-items: center;
   background-color: transparent;
   border: 0;
   cursor: pointer;
-  color: var(--color-black);
   font-size: var(--font-size);
   font-family: var(--font-family);
   min-height: 36px;
@@ -26,43 +25,9 @@ $_lightness-factor: 20%;
     border-top: $_border-height solid transparent;
     padding: $_border-height 12px;
   }
-  &:hover {
-    &::before {
-      box-shadow: 0 $_border-height $_border-height 0
-          adjust-color(colors.$black, $alpha: -0.92),
-        inset 0 (-$_border-height)-1px 0 0
-          adjust-color(colors.$primary, $lightness: $_lightness-factor * 0.5);
-    }
-  }
-
-  &:active::before,
-  &:hover:active::before {
-    box-shadow: none;
-  }
-
-  &:active::before,
-  &:hover::before {
-    background-color: adjust-color(
-      colors.$primary,
-      $lightness: $_lightness-factor
-    );
-    border-color: adjust-color(
-      colors.$primary,
-      $lightness: -$_lightness-factor * 0.5
-    );
-  }
 
   &::before {
-    background-color: adjust-color(
-      colors.$primary,
-      $lightness: $_lightness-factor * 1.5
-    );
     border-radius: 5px;
-    border: 1px solid var(--color-primary);
-    box-shadow: 0 $_border-height 10px 0
-        adjust-color(colors.$black, $alpha: -0.9),
-      inset 0 (-$_border-height)-1px 0 0
-        adjust-color(colors.$primary, $lightness: $_lightness-factor);
     box-sizing: border-box;
     content: "";
     display: block;
@@ -72,5 +37,41 @@ $_lightness-factor: 20%;
     top: 0;
     width: 100%;
     z-index: -1;
+  }
+}
+
+@mixin button-color($color: colors.$primary, $lightness: 15%) {
+  $_border: adjust-color($color, $lightness: $lightness);
+  $_background: adjust-color($_border, $lightness: 10%);
+  $_shadow: adjust-color(colors.$black, $alpha: -0.9);
+
+  &::before {
+    background-color: $_background;
+    border: 1px solid $_border;
+    box-shadow: 0 $_border-height 10px 0 $_shadow,
+      inset 0 (-$_border-height)-1px 0 0 $_border;
+  }
+
+  &:hover::before {
+    box-shadow: 0 $_border-height $_border-height 0
+        adjust-color($_shadow, $lightness: 20%),
+      inset 0 (-$_border-height)-1px 0 0 $_background;
+  }
+  &:active::before {
+    box-shadow: none;
+  }
+  &:active::before,
+  &:hover::before {
+    background-color: adjust-color($_background, $lightness: 10%);
+    border-color: adjust-color($_border, $lightness: -10%);
+  }
+} // Color Config
+.button {
+  color: var(--color-black);
+
+  @include button-color();
+
+  &.secondary {
+    @include button-color(colors.$secondary);
   }
 }

@@ -36,7 +36,12 @@ export default [
       pluginStyles({
         extensions: [".scss"],
         mode: "emit",
-        plugins: [autoprefixer(), csso()].filter(Boolean),
+        plugins: [
+          autoprefixer(),
+          csso({
+            comments: false,
+          }),
+        ].filter(Boolean),
         sourceMap: false,
       }),
       pluginStylesLit({
@@ -94,7 +99,7 @@ export default [
       pluginStyles({
         extensions: [".scss"],
         mode: "extract",
-        plugins: [autoprefixer(), csso()].filter(Boolean),
+        plugins: [autoprefixer(), csso({ comments: false })].filter(Boolean),
         sourceMap: false,
       }),
     ],

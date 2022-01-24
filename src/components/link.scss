@@ -1,7 +1,7 @@
 @use "../config/scss/colors";
 
 :host {
-  display: inline;
+  display: inline-block;
 }
 
 .link {
@@ -9,7 +9,7 @@
   color: var(--color-link);
   text-decoration: underline;
   text-decoration-thickness: 2px;
-  text-decoration-color: adjust-color(colors.$link, $lightness: 20%);
+  text-decoration-color: adjust-color(colors.$link, $lightness: 25%);
 
   &:active {
     background-color: adjust-color(colors.$link, $lightness: 50%);
@@ -17,13 +17,16 @@
 }
 
 :host(.nav-link) {
-  display: inline-block;
-
   .link {
     color: var(--color-black);
+    display: inline-block;
     padding: 0.5rem 0.75rem;
     text-decoration: none;
     text-decoration-thickness: 3px;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -32,7 +35,7 @@
 // may not wanna do that tho anyways in favor of this
 :host(.nav-link.active) {
   .link {
-    background: adjust-color(colors.$link, $lightness: 50%);
+    background: adjust-color(colors.$link, $lightness: 38%);
     text-decoration: underline;
   }
 }
