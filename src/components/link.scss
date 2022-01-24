@@ -35,7 +35,8 @@
 // may not wanna do that tho anyways in favor of this
 :host(.nav-link.active) {
   .link {
-    background: adjust-color(colors.$link, $lightness: 38%);
+    background: adjust-color(colors.$link, $lightness: 39%);
     text-decoration: underline;
+    text-decoration-color: var(--color-link);
   }
 }
