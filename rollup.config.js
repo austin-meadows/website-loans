@@ -1,37 +1,28 @@
+import fs from "fs";
+import { brotliCompressSync } from "zlib";
+
 import pluginResolve from "@rollup/plugin-node-resolve";
 import pluginTypescript from "@rollup/plugin-typescript";
-import pluginHtml from "@web/rollup-plugin-html";
+import { rollupPluginHTML as pluginHtml } from "@web/rollup-plugin-html";
 import autoprefixer from "autoprefixer";
 import csso from "postcss-csso";
 import pluginGzip from "rollup-plugin-gzip";
 import pluginStylesLit from "rollup-plugin-lit-css";
-import pluginLiterals from "rollup-plugin-minify-html-literals";
-import { sizeme } from "rollup-plugin-sizeme";
+import htmlLiterals from "rollup-plugin-minify-html-literals";
 import pluginStyles from "rollup-plugin-styles";
 import { terser as pluginTerser } from "rollup-plugin-terser";
 
-import { brotliCompressSync } from "zlib";
-
-import { insert } from "./plugin/rollup-insert";
-import { version } from "./package.json";
-
+const { version } = JSON.parse(
+  fs.readFileSync("package.json", { encoding: "utf-8" })
+);
 const isWatch = process.env.WATCH === "true";
+const { default: pluginLiterals } = htmlLiterals;
+
 export default [
   {
     input: "src/index.html",
     output: {
-      // Cursed and hacky way to get my files output to components/views folders
-      // because rollup won't let me nicely
-      // chunkFileNames: `[name]-${version}.js`,
-      chunkFileNames: ({ facadeModuleId: filename, modules, name }) => {
-        const moduleKeys = Object.keys(modules);
-        const isComponent = moduleKeys.length === 2;
-        const componentFolderName = moduleKeys[0].split("/").at(-2);
-        const foldername = isComponent
-          ? componentFolderName
-          : filename?.split("/").at(-2) || "";
-        return `${foldername}${foldername ? "/" : ""}${name}-${version}.js`;
-      },
+      chunkFileNames: `[name]-${version}.js`,
       dir: "build",
       entryFileNames: `[name]-${version}.js`,
       manualChunks: {
@@ -46,7 +37,6 @@ export default [
       pluginHtml({
         extractAssets: false,
         minify: true,
-        transformHtml: [(html) => html.replace(/{{version}}/g, version)],
       }),
       pluginTypescript({ outputToFilesystem: false }),
       pluginStyles({
@@ -111,7 +101,6 @@ export default [
             memLevel: 9,
           },
         }),
-      !isWatch && sizeme(),
     ],
     preserveEntrySignatures: false,
     treeshake: {
@@ -123,7 +112,7 @@ export default [
     input: "src/index.scss",
     output: {
       assetFileNames: "[name][extname]",
-      dir: "build/temp",
+      dir: "temp",
     },
     plugins: [
       pluginStyles({
@@ -132,8 +121,6 @@ export default [
         plugins: [autoprefixer(), csso({ comments: false })].filter(Boolean),
         sourceMap: false,
       }),
-      insert(),
-      !isWatch && sizeme(),
     ],
   },
 ];

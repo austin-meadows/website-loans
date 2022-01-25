@@ -14,7 +14,6 @@
     "@web/rollup-plugin-html": "1.10.1",
     "autoprefixer": "10.4.2",
     "concurrently": "7.0.0",
-    "cross-env": "7.0.3",
     "eslint": "8.7.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-config-airbnb-typescript": "16.1.0",
@@ -22,12 +21,10 @@
     "eslint-plugin-lit": "1.6.1",
     "eslint-plugin-prettier": "4.0.0",
     "postcss-csso": "6.0.0",
-    "rimraf": "3.0.2",
     "rollup": "2.66.0",
     "rollup-plugin-gzip": "3.0.0",
     "rollup-plugin-lit-css": "3.2.1",
     "rollup-plugin-minify-html-literals": "1.2.6",
-    "rollup-plugin-sizeme": "1.0.4",
     "rollup-plugin-styles": "4.0.0",
     "rollup-plugin-terser": "7.0.2",
     "sass": "1.49.0",
@@ -42,13 +39,12 @@
   "name": "website-loans",
   "private": true,
   "scripts": {
-    "_clean": "rimraf build",
-    "_clean-leftovers": "rimraf build/temp",
     "_watch--build": "serve -s build",
     "_watch--serve": "cross-env WATCH=true rollup -c -w",
-    "build": "npm run _clean && rollup -c && npm run _clean-leftovers",
+    "build": "node --no-warnings scripts/build.js",
     "lint": "eslint **/*.ts",
-    "serve": "npm run _clean && concurrently npm:_watch--*"
+    "serve": "concurrently npm:_watch--*"
   },
+  "type": "module",
   "version": "0.1.0"
 }
