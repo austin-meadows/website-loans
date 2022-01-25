@@ -36,7 +36,7 @@ config.forEach((cnf) => {
             );
             modContent = modContent.replace(
               /<style[\s\S]*<\/style>/g,
-              cssContent
+              `<style>${cssContent}</style>`
             );
           }
 
