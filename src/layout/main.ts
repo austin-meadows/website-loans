@@ -1,9 +1,36 @@
-import { LitElement, html } from "lit";
-import { customElement } from "lit/decorators.js";
+import { LitElement, html, TemplateResult } from "lit";
+import { customElement, property } from "lit/decorators.js";
+
+import router from "../config/js/router";
 
 @customElement("l-main")
 export default class Main extends LitElement {
+  @property({ attribute: false })
+  protected view?: TemplateResult;
+
+  constructor() {
+    super();
+    router
+      .on("/", () => {
+        import("../views/Home").then(() => {
+          this.view = html`<v-home></v-home>`;
+        });
+      })
+      .on("/sign-in", () => {
+        import("../views/SignIn").then(() => {
+          this.view = html`<v-signin></v-signin>`;
+        });
+      })
+      .on("/storyboard", () => {
+        import("../views/Storyboard").then(() => {
+          this.view = html`<v-storyboard></v-storyboard>`;
+        });
+      })
+      .resolve();
+  }
+
   protected render() {
-    return html`<main><slot></slot></main>`;
+    console.info("l-main | View Rendered:", this.view);
+    return html`<main>${this.view}</main>`;
   }
 }

@@ -1,8 +1,9 @@
-import "../config/js/router";
 import "../components/link";
 
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
+
+import router from "../config/js/router";
 
 import style from "./navigation.scss";
 
@@ -19,40 +20,42 @@ export default class Navigation extends LitElement {
   render() {
     return html`
       <nav id="nav">
-        <c-link
-          @click="${this._handleClick}"
+        <a
+          @click="${this.handleClick}"
           class="nav-link${Navigation.initUrl === "/" ? " active" : ""}"
-          to="/"
+          href="/"
         >
           Home
-        </c-link>
-        <c-link
-          @click="${this._handleClick}"
+        </a>
+        <a
+          @click="${this.handleClick}"
           class="nav-link${Navigation.initUrl === "/sign-in" ? " active" : ""}"
-          to="/sign-in"
+          href="/sign-in"
         >
           Sign In
-        </c-link>
-        <c-link
-          @click="${this._handleClick}"
+        </a>
+        <a
+          @click="${this.handleClick}"
           class="nav-link${Navigation.initUrl === "/storyboard"
             ? " active"
             : ""}"
-          to="/storyboard"
+          href="/storyboard"
         >
           Storyboard
-        </c-link>
+        </a>
       </nav>
     `;
   }
 
-  private _handleClick(event: MouseEvent): void {
-    console.info("l-nav | nav click", event.target);
+  private handleClick(event: MouseEvent): void {
+    event.preventDefault();
     const target = event.target as Element;
     if (this.active === target) return;
     this.active = target;
-    const parent = target.parentElement;
-    parent?.getElementsByClassName(ACTIVE)[0]?.classList.remove(ACTIVE);
+    target.parentElement
+      ?.getElementsByClassName(ACTIVE)[0]
+      ?.classList.remove(ACTIVE);
     target.classList.add(ACTIVE);
+    router.navigate(target.getAttribute("href") || "/");
   }
 }

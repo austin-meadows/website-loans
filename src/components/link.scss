@@ -5,7 +5,6 @@
 }
 
 .link {
-  border-radius: 5px;
   color: var(--color-link);
   text-decoration: underline;
   text-decoration-thickness: 2px;
@@ -13,30 +12,5 @@
 
   &:active {
     background-color: adjust-color(colors.$link, $lightness: 33%);
-  }
-}
-
-:host(.nav-link) {
-  .link {
-    color: var(--color-black);
-    display: inline-block;
-    padding: 0.5rem 0.75rem;
-    text-decoration: none;
-    text-decoration-thickness: 3px;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
-// TODO: better way to do this?
-// JS might let me add class to shadow dom link,
-// may not wanna do that tho anyways in favor of this
-:host(.nav-link.active) {
-  .link {
-    background: adjust-color(colors.$link, $lightness: 39%);
-    text-decoration: underline;
-    text-decoration-color: var(--color-link);
   }
 }

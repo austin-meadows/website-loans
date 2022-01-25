@@ -1,13 +1,32 @@
+@use "../config/scss/colors";
+
 :host {
   display: block;
 }
 
 #nav {
-  margin: 0 10px 10px;
+  margin: 5px 5px 10px;
+}
 
-  > .nav-link {
-    & + .nav-link:not(:last-child) {
-      padding: 0 5px;
-    }
+.nav-link {
+  border-radius: 5px;
+  color: var(--color-black);
+  display: inline-block;
+  padding: 4px 12px 8px;
+  text-decoration-color: var(--color-link);
+  text-decoration: none;
+  text-decoration-thickness: 3px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.active {
+    background: adjust-color(colors.$link, $lightness: 35%);
+    text-decoration: underline;
+  }
+
+  & + .nav-link:not(:last-child) {
+    margin: 0 5px;
   }
 }

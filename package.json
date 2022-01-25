@@ -1,8 +1,8 @@
 {
   "author": "Austin Meadows",
   "dependencies": {
-    "@vaadin/router": "1.7.4",
-    "lit": "2.1.1"
+    "lit": "2.1.1",
+    "navigo": "8.11.1"
   },
   "description": "Peer-to-peer student loan crowdfunding platform.",
   "devDependencies": {

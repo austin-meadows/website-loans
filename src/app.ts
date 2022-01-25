@@ -16,7 +16,7 @@ export default class App extends LitElement {
     console.info("s-app | rendered");
     return html`
       <l-navigation></l-navigation>
-      <l-main><slot></slot></l-main>
+      <l-main></l-main>
     `;
   }
 }

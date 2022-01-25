@@ -5,47 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Loans</title>
     <base href="/" />
+    <!---------- Preconnects ---------->
     <link
-      rel="preconnect"
       href="https://cdnjs.cloudflare.com"
+      rel="preconnect"
       crossorigin="anonymous"
     />
+
+    <!---------- Preload ---------->
     <link
-      as="script"
-      crossorigin="anonymous"
       href="/app-{{version}}.js"
+      as="script"
+      crossorigin="anonymous"
       rel="preload"
     />
     <link
-      as="script"
-      crossorigin="anonymous"
       href="/lit-{{version}}.js"
-      rel="preload"
-    />
-    <link
       as="script"
       crossorigin="anonymous"
+      rel="preload"
+    />
+    <link
       href="/router-{{version}}.js"
+      as="script"
+      crossorigin="anonymous"
       rel="preload"
     />
-    <link as="style" href="/index.css" rel="preload" />
+    <link href="/index.css" as="style" rel="preload" />
     <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/reseter.css/2.0.0/minireseter.min.css"
       as="style"
+      integrity="sha512-26lCJWeu4qh1Kd3YpqH03s+Ju7qI9mqz48E8mPE/qIoucLUbkBx6oayTM+0T3mAdC1DdT1grtnFtJNwsB+8qzw=="
       crossorigin="anonymous"
-      href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css"
-      integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA=="
       rel="preload"
     />
+
+    <!---------- Assets ---------->
     <link
-      crossorigin="anonymous"
-      href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css"
-      integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA=="
-      referrerpolicy="no-referrer"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reseter.css/2.0.0/minireseter.min.css"
       rel="stylesheet"
+      integrity="sha512-26lCJWeu4qh1Kd3YpqH03s+Ju7qI9mqz48E8mPE/qIoucLUbkBx6oayTM+0T3mAdC1DdT1grtnFtJNwsB+8qzw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <link href="/index.css" rel="stylesheet" />
   </head>
   <body>
-    <script type="module" src="./app.ts"></script>
+    <s-app></s-app>
+    <script src="./app.ts" type="module"></script>
   </body>
 </html>

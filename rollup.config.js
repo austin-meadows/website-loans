@@ -20,7 +20,7 @@ export default [
       entryFileNames: `[name]-${version}.js`,
       manualChunks: {
         lit: ["lit"],
-        router: ["@vaadin/router"],
+        router: ["navigo"],
       },
       sourcemap: false,
       validate: true,
