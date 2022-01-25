@@ -3,11 +3,16 @@ import pluginTypescript from "@rollup/plugin-typescript";
 import pluginHtml from "@web/rollup-plugin-html";
 import autoprefixer from "autoprefixer";
 import csso from "postcss-csso";
+import pluginGzip from "rollup-plugin-gzip";
 import pluginStylesLit from "rollup-plugin-lit-css";
 import pluginLiterals from "rollup-plugin-minify-html-literals";
+import { sizeme } from "rollup-plugin-sizeme";
 import pluginStyles from "rollup-plugin-styles";
 import { terser as pluginTerser } from "rollup-plugin-terser";
 
+import { brotliCompressSync } from "zlib";
+
+import { insert } from "./plugin/rollup-insert";
 import { version } from "./package.json";
 
 const isWatch = process.env.WATCH === "true";
@@ -93,6 +98,20 @@ export default [
         },
         module: true,
       }),
+      !isWatch &&
+        pluginGzip({
+          customCompression: (content) =>
+            brotliCompressSync(Buffer.from(content)),
+          fileName: ".br",
+        }),
+      !isWatch &&
+        pluginGzip({
+          gzipOptions: {
+            level: 9,
+            memLevel: 9,
+          },
+        }),
+      !isWatch && sizeme(),
     ],
     preserveEntrySignatures: false,
     treeshake: {
@@ -104,7 +123,7 @@ export default [
     input: "src/index.scss",
     output: {
       assetFileNames: "[name][extname]",
-      dir: "build",
+      dir: "build/temp",
     },
     plugins: [
       pluginStyles({
@@ -113,6 +132,8 @@ export default [
         plugins: [autoprefixer(), csso({ comments: false })].filter(Boolean),
         sourceMap: false,
       }),
+      insert(),
+      !isWatch && sizeme(),
     ],
   },
 ];
