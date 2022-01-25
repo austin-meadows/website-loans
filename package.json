@@ -41,9 +41,10 @@
   "private": true,
   "scripts": {
     "_clean": "rimraf build",
+    "_clean-leftovers": "rimraf build/index.js",
     "_watch--build": "serve -s build",
     "_watch--serve": "cross-env WATCH=true rollup -c -w",
-    "build": "npm run _clean && rollup -c",
+    "build": "npm run _clean && rollup -c && npm run _clean-leftovers",
     "lint": "eslint **/*.ts",
     "serve": "npm run _clean && concurrently npm:_watch--*"
   },

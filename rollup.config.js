@@ -15,7 +15,18 @@ export default [
   {
     input: "src/index.html",
     output: {
-      chunkFileNames: `[name]-${version}.js`,
+      // Cursed and hacky way to get my files output to components/views folders
+      // because rollup won't let me nicely
+      // chunkFileNames: `[name]-${version}.js`,
+      chunkFileNames: ({ facadeModuleId: filename, modules, name }) => {
+        const moduleKeys = Object.keys(modules);
+        const isComponent = moduleKeys.length === 2;
+        const componentFolderName = moduleKeys[0].split("/").at(-2);
+        const foldername = isComponent
+          ? componentFolderName
+          : filename?.split("/").at(-2) || "";
+        return `${foldername}${foldername ? "/" : ""}${name}-${version}.js`;
+      },
       dir: "build",
       entryFileNames: `[name]-${version}.js`,
       manualChunks: {
