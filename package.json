@@ -9,6 +9,7 @@
     "@web/rollup-plugin-html": "1.10.1",
     "autoprefixer": "10.4.2",
     "concurrently": "7.0.0",
+    "cross-env": "7.0.3",
     "eslint": "8.7.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-config-airbnb-typescript": "16.1.0",
@@ -38,7 +39,7 @@
   "private": true,
   "scripts": {
     "_watch--build": "serve -s build",
-    "_watch--serve": "cross-env WATCH=true rollup -c -w",
+    "_watch--serve": "cross-env WATCH=true node --no-warnings scripts/watch.js",
     "build": "node --no-warnings scripts/build.js",
     "lint": "eslint **/*.ts",
     "serve": "concurrently npm:_watch--*"
