@@ -1,9 +1,28 @@
+import fs from "fs";
+
+import autoprefixer from "autoprefixer";
+import { minify } from "html-minifier";
+import postcss from "postcss";
+import csso from "postcss-csso";
+import sass from "sass";
+
+const template = async ({ title }) => {
+  const { version } = JSON.parse(
+    fs.readFileSync("package.json", { encoding: "utf-8" })
+  );
+  const { css } = sass.compile("src/index.scss");
+  const { css: processed } = await postcss([
+    csso({ removeComments: true }),
+    autoprefixer(),
+  ]).process(css);
+  return minify(
+    `
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Loans</title>
+    <title>${title}</title>
     <base href="/" />
     <!---------- Preconnects ---------->
     <link
@@ -11,28 +30,25 @@
       rel="preconnect"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.gstatic.com"
+      rel="preconnect"
+      crossorigin="anonymous"
+    />
+    <link
+      href="/lit-${version}.js"
+      as="script"
+      crossorigin="anonymous"
+      rel="preload"
+    />
+    <link
+      href="/router-${version}.js"
+      as="script"
+      crossorigin="anonymous"
+      rel="preload"
+    />
 
     <!---------- Preload ---------->
-
-    <link
-      href="/app-{{version}}.js"
-      as="script"
-      crossorigin="anonymous"
-      rel="preload"
-    />
-    <link
-      href="/lit-{{version}}.js"
-      as="script"
-      crossorigin="anonymous"
-      rel="preload"
-    />
-    <link
-      href="/router-{{version}}.js"
-      as="script"
-      crossorigin="anonymous"
-      rel="preload"
-    />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/reseter.css/2.0.0/minireseter.min.css"
       as="style"
@@ -56,12 +72,22 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <style>
-      /* inline style */
-    </style>
+    <style>${processed}</style>
   </head>
   <body>
     <s-app></s-app>
-    <script src="./app.ts" type="module" defer></script>
+    <script src="/app-${version}.js" type="module"></script>
   </body>
 </html>
+`,
+    {
+      collapseWhitespace: true,
+      removeAttributeQuotes: true,
+      removeComments: true,
+      sortAttributes: true,
+      sortClassName: true,
+    }
+  );
+};
+
+export default template;
