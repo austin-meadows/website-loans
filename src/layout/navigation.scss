@@ -12,8 +12,10 @@
   border-radius: 5px;
   color: var(--color-black);
   display: inline-block;
+  font-size: 18px;
   padding: 8px 14px 12px;
   text-decoration: none;
+  user-select: none;
 
   &:hover,
   &.active {

@@ -3,8 +3,12 @@ import { customElement, property } from "lit/decorators.js";
 
 import router from "../config/js/router";
 
+import style from "./main.scss";
+
 @customElement("l-main")
 export default class Main extends LitElement {
+  static readonly styles = style;
+
   @property({ attribute: false })
   protected view?: TemplateResult;
 

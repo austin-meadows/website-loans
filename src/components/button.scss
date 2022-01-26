@@ -2,6 +2,9 @@
 
 $_border-height: 4px;
 
+:host(:not(:first-child)) {
+  margin-left: 10px;
+}
 :host {
   display: inline-block;
 }
