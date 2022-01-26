@@ -38,22 +38,25 @@ const template = async ({ title }) => {
 
     <!---------- Preload ---------->
     <link
-      rel="modulepreload"
+      rel="preload"
       href="/app-${version}.js"
       as="script"
       crossorigin="anonymous"
+      referrerpolicy="same-origin"
     />
     <link
-      rel="modulepreload"
+      rel="preload"
       href="/lit-${version}.js"
       as="script"
       crossorigin="anonymous"
+      referrerpolicy="same-origin"
     />
     <link
-      rel="modulepreload"
+      rel="preload"
       href="/router-${version}.js"
       as="script"
       crossorigin="anonymous"
+      referrerpolicy="same-origin"
     />
 
     <link
@@ -87,7 +90,7 @@ const template = async ({ title }) => {
         "/storyboard": "Storyboard-${version}.js"
       };
       preloadLink.href = preloadMap[window.location.pathname.toLowerCase()];
-      preloadLink.rel = "modulepreload";
+      preloadLink.rel = "preload";
       preloadLink.as = "script";
       preloadLink.setAttribute("crossorigin", "anonymous");
       document.head.appendChild(preloadLink);
@@ -96,7 +99,7 @@ const template = async ({ title }) => {
   </head>
   <body>
     <s-app></s-app>
-    <script src="/app-${version}.js" type="module" async crossorigin="anonymous"></script>
+    <script src="/app-${version}.js" type="module" async crossorigin="anonymous" referrerpolicy="same-origin"></script>
   </body>
 </html>
 `,

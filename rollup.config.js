@@ -27,6 +27,7 @@ export default {
     chunkFileNames: `[name]-${version}.js`,
     dir: "build",
     entryFileNames: `[name]-${version}.js`,
+    esModule: false,
     manualChunks: {
       lit: ["lit"],
       router: ["navigo"],
