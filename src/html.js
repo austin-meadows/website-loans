@@ -83,7 +83,7 @@ const template = async ({ title }) => {
   </head>
   <body>
     <s-app></s-app>
-    <script src="/app-${version}.js" type="module"></script>
+    <script src="/app-${version}.js" type="module" defer></script>
   </body>
 </html>
 `,
