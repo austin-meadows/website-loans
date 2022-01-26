@@ -35,6 +35,14 @@ const template = async ({ title }) => {
       rel="preconnect"
       crossorigin="anonymous"
     />
+
+    <!---------- Preload ---------->
+    <link
+      href="/app-${version}.js"
+      as="script"
+      crossorigin="anonymous"
+      rel="preload"
+    />
     <link
       href="/lit-${version}.js"
       as="script"
@@ -48,7 +56,6 @@ const template = async ({ title }) => {
       rel="preload"
     />
 
-    <!---------- Preload ---------->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/reseter.css/2.0.0/minireseter.min.css"
       as="style"
