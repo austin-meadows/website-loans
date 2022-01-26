@@ -39,13 +39,6 @@ const template = async ({ title }) => {
     <!---------- Preload ---------->
     <link
       rel="preload"
-      href="/app-${version}.js"
-      as="script"
-      crossorigin="anonymous"
-      referrerpolicy="same-origin"
-    />
-    <link
-      rel="preload"
       href="/lit-${version}.js"
       as="script"
       crossorigin="anonymous"
@@ -54,6 +47,13 @@ const template = async ({ title }) => {
     <link
       rel="preload"
       href="/router-${version}.js"
+      as="script"
+      crossorigin="anonymous"
+      referrerpolicy="same-origin"
+    />
+    <link
+      rel="preload"
+      href="/app-${version}.js"
       as="script"
       crossorigin="anonymous"
       referrerpolicy="same-origin"
@@ -99,7 +99,7 @@ const template = async ({ title }) => {
   </head>
   <body>
     <s-app></s-app>
-    <script src="/app-${version}.js" type="module" async crossorigin="anonymous" referrerpolicy="same-origin"></script>
+    <script src="/app-${version}.js" type="module" async></script>
   </body>
 </html>
 `,
