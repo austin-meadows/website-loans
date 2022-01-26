@@ -38,22 +38,22 @@ const template = async ({ title }) => {
 
     <!---------- Preload ---------->
     <link
-      href="app-${version}.js"
+      rel="modulepreload"
+      href="/app-${version}.js"
       as="script"
       crossorigin="anonymous"
-      rel="preload"
     />
     <link
-      href="lit-${version}.js"
+      rel="modulepreload"
+      href="/lit-${version}.js"
       as="script"
       crossorigin="anonymous"
-      rel="preload"
     />
     <link
-      href="router-${version}.js"
+      rel="modulepreload"
+      href="/router-${version}.js"
       as="script"
       crossorigin="anonymous"
-      rel="preload"
     />
 
     <link
@@ -79,16 +79,30 @@ const template = async ({ title }) => {
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script type="application/javascript">
+      var preloadLink = document.createElement("link");
+      var preloadMap = {
+        "/": "Home-${version}.js",
+        "/sign-in": "SignIn-${version}.js",
+        "/storyboard": "Storyboard-${version}.js"
+      };
+      preloadLink.href = preloadMap[window.location.pathname.toLowerCase()];
+      preloadLink.rel = "modulepreload";
+      preloadLink.as = "script";
+      preloadLink.setAttribute("crossorigin", "anonymous");
+      document.head.appendChild(preloadLink);
+    </script>
     <style>${processed}</style>
   </head>
   <body>
     <s-app></s-app>
-    <script src="app-${version}.js" type="module"></script>
+    <script src="/app-${version}.js" type="module" async crossorigin="anonymous"></script>
   </body>
 </html>
 `,
     {
       collapseWhitespace: true,
+      minifyJS: true,
       removeAttributeQuotes: true,
       removeComments: true,
       sortAttributes: true,
