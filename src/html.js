@@ -14,7 +14,7 @@ const template = async ({ title }) => {
   const { css: processed } = await postcss([
     csso({ removeComments: true }),
     autoprefixer(),
-  ]).process(css);
+  ]).process(css, { from: undefined });
   return minify(
     `
 <!DOCTYPE html>

@@ -9,6 +9,7 @@ import csso from "postcss-csso";
 import pluginGzip from "rollup-plugin-gzip";
 import pluginStylesLit from "rollup-plugin-lit-css";
 import pluginLiterals from "rollup-plugin-minify-html-literals";
+import { sizeme as pluginSizeMe } from "rollup-plugin-sizeme";
 import pluginStyles from "rollup-plugin-styles";
 import { terser as pluginTerser } from "rollup-plugin-terser";
 
@@ -103,6 +104,7 @@ export default {
           memLevel: 9,
         },
       }),
+    !isWatch && pluginSizeMe(),
   ],
   preserveEntrySignatures: false,
   treeshake: {
