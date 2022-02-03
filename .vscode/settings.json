@@ -20,12 +20,16 @@
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
   "eslint.format.enable": true,
+  "eslint.nodePath": ".yarn/sdks",
   "files.eol": "\n",
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
   "search.exclude": {
     "**/.pnp.*": true,
     "**/.yarn": true
-  }
+  },
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": ".yarn/sdks/typescript/lib"
 }
