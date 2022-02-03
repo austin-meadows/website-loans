@@ -52,7 +52,7 @@
     "_watch--serve": "cross-env WATCH=true rollup -c -w",
     "build": "rollup -c",
     "lint": "eslint **/*.ts",
-    "serve": "concurrently npm:_watch--*"
+    "serve": "concurrently \"yarn _watch--build\" \"yarn _watch--serve\""
   },
   "type": "module",
   "version": "0.1.0"
