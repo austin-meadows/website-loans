@@ -9,8 +9,11 @@ import "../layout/row";
 export default class Home extends LitElement {
   protected render() {
     return html`
-      <l-row>Content 1</l-row>
-      <l-row>Content 2</l-row>
+      <l-row>
+        <l-column>Content 1</l-column>
+        <l-column>Content 2</l-column>
+        <l-column>Content 3</l-column>
+      </l-row>
     `;
   }
 }
