@@ -29,24 +29,31 @@
     "import/no-unresolved": "error",
     // Make import statements need to be alphebetized
     "import/order": [
-      "error",
+      1,
       {
         "alphabetize": {
           "caseInsensitive": true,
           "order": "asc"
         },
-        "newlines-between": "always"
+        "groups": [
+          "external",
+          "builtin",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "newlines-between": "never"
       }
-    ],
-    // console statements are removed during minification,
+    ], // console statements are removed during minification,
     // so turn this off. Only useful console statements should
     // be committed though.
     "no-console": "off",
+    // Allow underscore dangle to denote private methods
+    "no-underscore-dangle": "off",
     // Shows prettier errors
     "prettier/prettier": "error",
     // Require JS object keys to be sorted
-    "sort-keys": "error",
-    // Allow underscore dangle to denote private methods
-    "no-underscore-dangle": "off"
+    "sort-keys": "error"
   }
 }

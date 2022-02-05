@@ -1,9 +1,7 @@
-import router from "../config/js/router";
-
-import style from "./main.scss";
-
-import { LitElement, html, TemplateResult } from "lit";
+import { LitElement, TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
+import router from "../config/js/router";
+import style from "./main.scss";
 
 @customElement("l-main")
 export default class Main extends LitElement {

@@ -1,7 +1,6 @@
-import style from "./link.scss";
-
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
+import style from "./link.scss";
 
 @customElement("c-link")
 export default class Link extends LitElement {

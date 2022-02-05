@@ -1,11 +1,9 @@
-import "../components/link";
-
-import router from "../config/js/router";
-
-import style from "./navigation.scss";
-
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
+import router from "../config/js/router";
+import style from "./navigation.scss";
+
+import "../components/link";
 
 const ACTIVE = "active";
 @customElement("l-navigation")

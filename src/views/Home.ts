@@ -1,8 +1,9 @@
-import "../components/button";
-import "../layout/row";
-
 import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
+
+import "../components/button";
+import "../layout/column";
+import "../layout/row";
 
 @customElement("v-home")
 export default class Home extends LitElement {
