@@ -1,9 +1,9 @@
 import "../components/link";
 
+import { TYPE } from "../components/button";
+
 import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
-
-import { TYPE } from "../components/button";
 
 @customElement("v-storyboard")
 export default class Storyboard extends LitElement {

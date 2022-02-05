@@ -39,6 +39,7 @@
     "@types/prettier": "2.4.3",
     "@types/rollup": "0.54.0",
     "@types/typescript": "2.0.0",
+    "eslint-import-resolver-node": "^0.3.6",
     "eslint-plugin-import": "2.25.4",
     "prettier": "2.5.1",
     "tslib": "2.3.1",

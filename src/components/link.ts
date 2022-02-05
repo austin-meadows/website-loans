@@ -1,7 +1,7 @@
+import style from "./link.scss";
+
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-
-import style from "./link.scss";
 
 @customElement("c-link")
 export default class Link extends LitElement {
@@ -11,7 +11,7 @@ export default class Link extends LitElement {
 
   @property({ type: String }) private to = window.location.pathname;
 
-  render() {
+  protected render() {
     return html`
       <a class="link" href="${this.to}">
         <slot></slot>

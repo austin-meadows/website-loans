@@ -1,11 +1,11 @@
 import "../components/link";
 
-import { LitElement, html } from "lit";
-import { customElement, property } from "lit/decorators.js";
-
 import router from "../config/js/router";
 
 import style from "./navigation.scss";
+
+import { LitElement, html } from "lit";
+import { customElement, property } from "lit/decorators.js";
 
 const ACTIVE = "active";
 @customElement("l-navigation")
@@ -17,7 +17,7 @@ export default class Navigation extends LitElement {
   @property({ attribute: false })
   private active?: Element;
 
-  render() {
+  protected render() {
     return html`
       <nav id="nav">
         <a
