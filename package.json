@@ -20,7 +20,7 @@
     "navigo": "8.11.1",
     "postcss": "8.4.7",
     "postcss-csso": "6.0.0",
-    "rollup": "2.69.1",
+    "rollup": "2.69.2",
     "rollup-plugin-gzip": "3.0.0",
     "rollup-plugin-lit-css": "3.2.1",
     "rollup-plugin-minify-html-literals": "1.2.6",
@@ -30,7 +30,7 @@
     "sass": "1.49.9",
     "serve": "13.0.2",
     "ts-loader": "9.2.7",
-    "typescript": "4.5.5"
+    "typescript": "4.6.2"
   },
   "description": "Peer-to-peer student loan crowdfunding platform.",
   "devDependencies": {
