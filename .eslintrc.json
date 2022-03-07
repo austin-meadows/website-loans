@@ -43,7 +43,7 @@
           "sibling",
           "index"
         ],
-        "newlines-between": "never"
+        "newlines-between": "always"
       }
     ], // console statements are removed during minification,
     // so turn this off. Only useful console statements should

@@ -1,5 +1,6 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
+
 import style from "./button.scss";
 
 export enum TYPE {
