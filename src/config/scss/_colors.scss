@@ -1,13 +1,57 @@
-$primary: #558b6e;
-$secondary: #704c5e;
-$black: #040f16;
-$white: #f5d7e3;
-$link: #558b6e;
+$primary: #5ac58c;
+$gray: #9fa09e;
+$blue: #8e9dcc;
+$black: #0f1108;
+$white: #fbfffd;
 
-// saved:
-// #558B6E
-// #88A09E
-// #704C5E
-// #B88C9E
-// #F1C8DB
-// #0d1f22
+:root {
+  --color-primary_-3: #{adjust-color($primary, $lightness: -30%)};
+  --color-primary_-2: #{adjust-color($primary, $lightness: -20%)};
+  --color-primary_-1: #{adjust-color($primary, $lightness: -10%)};
+  --color-primary_0: #{$primary};
+  --color-primary_1: #{adjust-color($primary, $lightness: 10%)};
+  --color-primary_2: #{adjust-color($primary, $lightness: 20%)};
+  --color-primary_3: #{adjust-color($primary, $lightness: 30%)};
+
+  --color-gray_-3: #{adjust-color($gray, $lightness: -30%)};
+  --color-gray_-2: #{adjust-color($gray, $lightness: -20%)};
+  --color-gray_-1: #{adjust-color($gray, $lightness: -10%)};
+  --color-gray_0: #{$gray};
+  --color-gray_1: #{adjust-color($gray, $lightness: 10%)};
+  --color-gray_2: #{adjust-color($gray, $lightness: 20%)};
+  --color-gray_3: #{adjust-color($gray, $lightness: 30%)};
+
+  --color-black: #{$black};
+  --color-white: #{$white};
+}
+
+@media (prefers-color-scheme: dark) {
+  $_dark-primary: adjust-color($primary, $lightness: -30%);
+  $_dark-gray: adjust-color($gray, $lightness: -30%);
+
+  :root {
+    --color-primary_-3: #{adjust-color($_dark-primary, $lightness: -30%)};
+    --color-primary_-2: #{adjust-color($_dark-primary, $lightness: -20%)};
+    --color-primary_-1: #{adjust-color($_dark-primary, $lightness: -10%)};
+    --color-primary_0: #{$_dark-primary};
+    --color-primary_1: #{adjust-color($_dark-primary, $lightness: 10%)};
+    --color-primary_2: #{adjust-color($_dark-primary, $lightness: 20%)};
+    --color-primary_3: #{adjust-color($_dark-primary, $lightness: 30%)};
+
+    --color-gray_-3: #{adjust-color($_dark-gray, $lightness: -30%)};
+    --color-gray_-2: #{adjust-color($_dark-gray, $lightness: -20%)};
+    --color-gray_-1: #{adjust-color($_dark-gray, $lightness: -10%)};
+    --color-gray_0: #{$_dark-gray};
+    --color-gray_1: #{adjust-color($_dark-gray, $lightness: 10%)};
+    --color-gray_2: #{adjust-color($_dark-gray, $lightness: 20%)};
+    --color-gray_3: #{adjust-color($_dark-gray, $lightness: 30%)};
+
+    --color-black: #{$white};
+    --color-white: #{$black};
+  }
+}
+
+@function get-color($color: "primary", $lightness: 0%) {
+  $_convert: calc($lightness / 100% * 10);
+  @return var(--color- + $color + "_" + $_convert);
+}

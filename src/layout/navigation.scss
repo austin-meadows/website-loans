@@ -21,12 +21,12 @@
   &.active {
     text-decoration: underline;
     text-decoration: underline;
-    text-decoration-color: var(--color-link);
+    text-decoration-color: var(--color-primary_0);
     text-decoration-thickness: 3px;
   }
 
   &.active {
-    background: adjust-color(colors.$link, $lightness: 35%);
+    background: var(--color-primary_3);
   }
 
   & + .nav-link:not(:last-child) {

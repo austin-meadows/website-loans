@@ -1,16 +1,14 @@
-@use "../config/scss/colors";
-
 :host {
   display: inline-block;
 }
 
 .link {
-  color: var(--color-link);
+  color: var(--color-black);
   text-decoration: underline;
   text-decoration-thickness: 2px;
-  text-decoration-color: adjust-color(colors.$link, $lightness: 33%);
+  text-decoration-color: var(--color-primary_2);
 
   &:active {
-    background-color: adjust-color(colors.$link, $lightness: 33%);
+    background-color: var(--color-primary_2);
   }
 }

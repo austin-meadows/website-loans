@@ -16,6 +16,11 @@ export default class Storyboard extends LitElement {
         <c-button>Button Tertiary</c-button>
       </div>
 
+      <div>
+        <c-button>Continue</c-button>
+        <c-button type="${TYPE.SECONDARY}">Cancel</c-button>
+      </div>
+
       <h1>Link</h1>
       <div>
         <c-link to="/storyboard" icon="testing">Storyboard Link</c-link>

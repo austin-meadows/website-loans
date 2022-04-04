@@ -15,11 +15,6 @@
 }
 
 :root {
-  --color-primary: #{colors.$primary};
-  --color-secondary: #{colors.$secondary};
-  --color-black: #{colors.$black};
-  --color-white: #{colors.$white};
-  --color-link: #{colors.$link};
   --font-family: #{font.$family};
   --font-size: #{font.$size};
 }
@@ -27,4 +22,11 @@
 body {
   font-family: var(--font-family);
   font-size: var(--font-size);
+}
+
+html,
+body {
+  background: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-black);
 }
