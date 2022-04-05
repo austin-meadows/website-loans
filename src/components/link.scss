@@ -6,9 +6,9 @@
   color: var(--color-black);
   text-decoration: underline;
   text-decoration-thickness: 2px;
-  text-decoration-color: var(--color-primary_2);
+  text-decoration-color: var(--color-primary_1);
 
   &:active {
-    background-color: var(--color-primary_2);
+    background-color: var(--color-primary_1);
   }
 }

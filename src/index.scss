@@ -19,14 +19,11 @@
   --font-size: #{font.$size};
 }
 
-body {
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-}
-
 html,
 body {
   background: var(--color-white);
   background-color: var(--color-white);
   color: var(--color-black);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
 }

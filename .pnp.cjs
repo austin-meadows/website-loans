@@ -33,6 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@fortawesome/free-solid-svg-icons", "npm:6.1.1"],\
             ["@rollup/plugin-html", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:0.2.4"],\
             ["@rollup/plugin-node-resolve", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:13.1.3"],\
             ["@rollup/plugin-typescript", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:8.3.1"],\
@@ -122,6 +123,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["js-yaml", "npm:4.1.0"],\
             ["minimatch", "npm:3.0.4"],\
             ["strip-json-comments", "npm:3.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@fortawesome/fontawesome-common-types", [\
+        ["npm:6.1.1", {\
+          "packageLocation": "./.yarn/unplugged/@fortawesome-fontawesome-common-types-npm-6.1.1-4c6a8fd5e4/node_modules/@fortawesome/fontawesome-common-types/",\
+          "packageDependencies": [\
+            ["@fortawesome/fontawesome-common-types", "npm:6.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@fortawesome/free-solid-svg-icons", [\
+        ["npm:6.1.1", {\
+          "packageLocation": "./.yarn/unplugged/@fortawesome-free-solid-svg-icons-npm-6.1.1-ab68dfcd79/node_modules/@fortawesome/free-solid-svg-icons/",\
+          "packageDependencies": [\
+            ["@fortawesome/free-solid-svg-icons", "npm:6.1.1"],\
+            ["@fortawesome/fontawesome-common-types", "npm:6.1.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -6721,6 +6741,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["website-loans", "workspace:."],\
+            ["@fortawesome/free-solid-svg-icons", "npm:6.1.1"],\
             ["@rollup/plugin-html", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:0.2.4"],\
             ["@rollup/plugin-node-resolve", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:13.1.3"],\
             ["@rollup/plugin-typescript", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:8.3.1"],\

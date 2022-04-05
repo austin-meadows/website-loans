@@ -7,9 +7,7 @@ import style from "./link.scss";
 export default class Link extends LitElement {
   static readonly styles = style;
 
-  @property({ type: String }) private icon = "";
-
-  @property({ type: String }) private to = window.location.pathname;
+  @property({ type: String }) private readonly to = window.location.pathname;
 
   protected render() {
     return html`

@@ -1,3 +1,8 @@
+import {
+  faHouse,
+  faArrowRightToBracket,
+  faFileImage,
+} from "@fortawesome/free-solid-svg-icons";
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
@@ -5,7 +10,7 @@ import router from "../config/js/router";
 
 import style from "./navigation.scss";
 
-import "../components/link";
+import "../components/icon";
 
 const ACTIVE = "active";
 @customElement("l-navigation")
@@ -25,6 +30,7 @@ export default class Navigation extends LitElement {
           class="nav-link${Navigation.initUrl === "/" ? " active" : ""}"
           href="/"
         >
+          <c-icon .icon="${faHouse}"></c-icon>
           Home
         </a>
         <a
@@ -32,6 +38,7 @@ export default class Navigation extends LitElement {
           class="nav-link${Navigation.initUrl === "/sign-in" ? " active" : ""}"
           href="/sign-in"
         >
+          <c-icon .icon="${faArrowRightToBracket}"></c-icon>
           Sign In
         </a>
         <a
@@ -41,6 +48,7 @@ export default class Navigation extends LitElement {
             : ""}"
           href="/storyboard"
         >
+          <c-icon .icon="${faFileImage}"></c-icon>
           Storyboard
         </a>
       </nav>

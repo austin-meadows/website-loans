@@ -26,8 +26,8 @@ $white: #fbfffd;
 }
 
 @media (prefers-color-scheme: dark) {
-  $_dark-primary: adjust-color($primary, $lightness: -30%);
-  $_dark-gray: adjust-color($gray, $lightness: -30%);
+  $_dark-primary: adjust-color($primary, $lightness: -31%);
+  $_dark-gray: adjust-color($gray, $lightness: -31%);
 
   :root {
     --color-primary_-3: #{adjust-color($_dark-primary, $lightness: -30%)};

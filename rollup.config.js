@@ -81,11 +81,6 @@ export default {
         ecma: 2021,
         wrap_func_args: false,
       },
-      mangle: {
-        properties: {
-          regex: /^_/,
-        },
-      },
       module: true,
     }),
     pluginHtml({
