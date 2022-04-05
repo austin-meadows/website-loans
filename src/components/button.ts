@@ -2,7 +2,7 @@ import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 import STYLE from "./button.scss";
-import NAMES from "./button.scss.json";
+import NAME from "./button.scss.json";
 
 export enum TYPE {
   PRIMARY = "",
@@ -15,7 +15,7 @@ export default class Button extends LitElement {
   @property({ type: String }) type: TYPE = TYPE.PRIMARY;
 
   protected render() {
-    return html`<button class="${NAMES.button} ${NAMES[this.type]}">
+    return html`<button class="${NAME.button} ${NAME[this.type]}">
       <slot></slot>
     </button>`;
   }

@@ -11,14 +11,14 @@ import { customElement, property } from "lit/decorators.js";
 
 import router from "../config/js/router";
 
-import style from "./navigation.scss";
+import STYLE from "./navigation.scss";
+import NAME from "./navigation.scss.json";
 
 import "../components/icon";
 
-const ACTIVE = "active";
 @customElement("l-navigation")
 export default class Navigation extends LitElement {
-  static readonly styles = style;
+  static readonly styles = STYLE;
 
   static readonly initUrl = window.location.pathname;
 
@@ -28,15 +28,17 @@ export default class Navigation extends LitElement {
   protected render() {
     return html`
       <header>
-        <nav id="nav">
+        <nav id="${NAME.nav}">
           <div class="1">
-            <a class="nav-link" href="/">
+            <a class="${NAME["nav-link"]}" href="/">
               <c-icon .icon="${faSeedling}"></c-icon>
               Loans
             </a>
             <a
               @click="${this.handleClick}"
-              class="nav-link${Navigation.initUrl === "/" ? " active" : ""}"
+              class="${NAME["nav-link"]}${Navigation.initUrl === "/"
+                ? ` ${NAME._active}`
+                : ""}"
               href="/"
             >
               <c-icon .icon="${faCircleInfo}"></c-icon>
@@ -44,8 +46,8 @@ export default class Navigation extends LitElement {
             </a>
             <a
               @click="${this.handleClick}"
-              class="nav-link${Navigation.initUrl === "/sign-in"
-                ? " active"
+              class="${NAME["nav-link"]}${Navigation.initUrl === "/sign-in"
+                ? ` ${NAME._active}`
                 : ""}"
               href="/"
             >
@@ -54,8 +56,8 @@ export default class Navigation extends LitElement {
             </a>
             <a
               @click="${this.handleClick}"
-              class="nav-link${Navigation.initUrl === "/storyboard"
-                ? " active"
+              class="${NAME["nav-link"]}${Navigation.initUrl === "/storyboard"
+                ? ` ${NAME._active}`
                 : ""}"
               href="/storyboard"
             >
@@ -66,8 +68,8 @@ export default class Navigation extends LitElement {
           <div class="2">
             <a
               @click="${this.handleClick}"
-              class="nav-link${Navigation.initUrl === "/sign-in"
-                ? " active"
+              class="${NAME["nav-link"]}${Navigation.initUrl === "/sign-in"
+                ? ` ${NAME._active}`
                 : ""}"
               href="/sign-in"
             >
@@ -86,9 +88,9 @@ export default class Navigation extends LitElement {
     if (this.active === target) return;
     this.active = target;
     target.parentElement?.parentElement
-      ?.getElementsByClassName(ACTIVE)[0]
-      ?.classList.remove(ACTIVE);
-    target.classList.add(ACTIVE);
+      ?.getElementsByClassName(NAME._active)[0]
+      ?.classList.remove(NAME._active);
+    target.classList.add(NAME._active);
     router.navigate(target.getAttribute("href") || "/");
   }
 }

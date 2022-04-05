@@ -25,18 +25,18 @@
   user-select: none;
 
   &:hover,
-  &.active {
+  &._active {
     text-decoration: underline;
     text-decoration: underline;
     text-decoration-color: var(--color-primary_0);
     text-decoration-thickness: $_thickness;
   }
 
-  &.active {
+  &._active {
     background: var(--color-primary_2);
   }
 
-  &:hover:not(.active) {
+  &:hover:not(._active) {
     text-decoration-color: var(--color-primary_3);
   }
 

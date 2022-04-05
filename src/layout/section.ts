@@ -1,15 +1,15 @@
 import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
 
-import style from "./section.scss";
+import STYLE from "./section.scss";
 
 @customElement("l-section")
 export default class Section extends LitElement {
-  static readonly styles = style;
+  static readonly styles = STYLE;
 
   protected render() {
     return html`
-      <section class="section">
+      <section>
         <slot></slot>
       </section>
     `;

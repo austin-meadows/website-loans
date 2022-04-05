@@ -1,13 +1,15 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-import style from "./icon.scss";
+import STYLE from "./icon.scss";
 
 @customElement("c-icon")
 export default class Button extends LitElement {
-  static readonly styles = style;
+  static readonly styles = STYLE;
 
-  @property({ type: Object }) private readonly icon = {};
+  @property({ type: Object }) private readonly icon = {
+    icon: [0, 0, null, ""],
+  };
 
   protected render() {
     return html`
