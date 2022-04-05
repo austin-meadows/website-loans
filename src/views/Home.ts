@@ -26,10 +26,13 @@ export default class Home extends LitElement {
         </l-row>
         <l-row alignment="${ALIGNMENT.CENTER}">
           <c-heading level="${LEVEL.THREE}">
-            <c-color type="${TYPE["PRIMARY_-1"]}">Donate</c-color>${" "}to your
-            peers to help with their student loans.
+            <c-color type="${TYPE["PRIMARY_-1"]}" .isBold="${true}"
+              >Donate</c-color
+            >${" "}to your peers to help with their student loans.
             <br />
-            <c-color type="${TYPE["PRIMARY_-1"]}">List</c-color>${" "} your own.
+            <c-color type="${TYPE["PRIMARY_-1"]}" .isBold="${true}"
+              >List</c-color
+            >${" "} your own.
           </c-heading>
         </l-row>
       </l-section>

@@ -15,10 +15,13 @@ export default class Color extends LitElement {
 
   @property({ type: String }) private readonly type: TYPE | null = null;
 
+  @property({ type: Boolean }) private readonly isBold = false;
+
   protected render() {
     const type = this.type ? NAME[this.type] : "";
+    const bold = this.isBold ? ` ${NAME._isBold}` : "";
     return html`
-      <span class="${type}">
+      <span class="${type}${bold}">
         <slot></slot>
       </span>
     `;
