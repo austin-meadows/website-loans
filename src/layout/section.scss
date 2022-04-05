@@ -1,3 +1,5 @@
 :host {
   display: block;
+  margin: var(--font-size);
+  padding: calc(var(--font-size) * 7);
 }

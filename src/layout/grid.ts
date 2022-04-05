@@ -1,10 +1,10 @@
 import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
 
-import style from "./column.scss";
+import style from "./grid.scss";
 
-@customElement("l-column")
-export default class Column extends LitElement {
+@customElement("l-grid")
+export default class Grid extends LitElement {
   static readonly styles = style;
 
   protected render() {

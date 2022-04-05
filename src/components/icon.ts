@@ -18,7 +18,7 @@ export default class Button extends LitElement {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 ${this.icon.icon[0]} ${this.icon.icon[1]}"
       >
-        <path fill="currentColor" d="${this.icon.icon[4]}" class=""></path>
+        <path fill="currentColor" d="${this.icon.icon[4]}"></path>
       </svg>
     `;
   }

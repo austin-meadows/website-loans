@@ -1,13 +1,7 @@
-:host {
-  display: inline-block;
-  width: var(--font-size);
-  height: var(--font-size);
-
-  pointer-events: none;
-}
-
+:host,
 svg {
   display: inline-block;
   width: var(--font-size);
   height: var(--font-size);
+  pointer-events: none;
 }
