@@ -1,17 +1,21 @@
 :host {
+  display: block;
+}
+
+.container {
   background-color: var(--color-primary_1);
   border-radius: calc(var(--font-size) * 1.5);
   display: flex;
-  flex: 1 1 0;
-  flex-direction: column;
   height: 300px;
   overflow: hidden;
   position: relative;
   text-decoration: none;
   user-select: none;
   width: 100%;
-  max-width: 238px;
-  // Hover?
-  // transform: translate3d(0px, 0px, 0px) scale(1);
-  // opacity: 1;
+  transition: all 0.1s linear;
+
+  &:hover {
+    background: var(--color-primary_2);
+    transform: translate3d(0px, 0px, 0px) scale(1.05);
+  }
 }

@@ -1,10 +1,5 @@
-@use "./config/scss/colors";
-@use "./config/scss/font";
-
-:root {
-  --font-family: #{font.$family};
-  --font-size: #{font.$size};
-}
+@import "./config/scss/colors";
+@import "./config/scss/font";
 
 html,
 body {

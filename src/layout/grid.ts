@@ -1,11 +1,11 @@
 import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
 
-import style from "./grid.scss";
+import STYLE from "./grid.scss";
 
 @customElement("l-grid")
 export default class Grid extends LitElement {
-  static readonly styles = style;
+  static readonly styles = STYLE;
 
   protected render() {
     return html`<slot></slot>`;

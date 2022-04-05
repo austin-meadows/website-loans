@@ -1,13 +1,14 @@
 import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
 
-import style from "./card.scss";
+import STYLE from "./card.scss";
+import NAME from "./card.scss.json";
 
 @customElement("l-card")
 export default class Card extends LitElement {
-  static readonly styles = style;
+  static readonly styles = STYLE;
 
   protected render() {
-    return html`<slot></slot>`;
+    return html`<div class="${NAME.container}"><slot></slot></div>`;
   }
 }

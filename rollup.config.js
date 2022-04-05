@@ -51,7 +51,7 @@ export default {
             comments: false,
           }),
           cssModules({
-            generateScopedName: "[hash:base64:3]",
+            generateScopedName: "[contenthash:base64:3]",
           }),
         ])
           .process(compiled, { from: filePath })
