@@ -1,17 +1,20 @@
 import fs from "fs";
 import { brotliCompressSync } from "zlib";
 
-import pluginHtml from "@rollup/plugin-html";
+import pluginHTML from "@rollup/plugin-html";
+import pluginJSON from "@rollup/plugin-json";
 import pluginResolve from "@rollup/plugin-node-resolve";
 import pluginTypescript from "@rollup/plugin-typescript";
 import autoprefixer from "autoprefixer";
+import postcss from "postcss";
 import csso from "postcss-csso";
+import cssModules from "postcss-modules";
 import pluginGzip from "rollup-plugin-gzip";
 import pluginStylesLit from "rollup-plugin-lit-css";
 import pluginLiterals from "rollup-plugin-minify-html-literals";
 import { sizeme as pluginSizeMe } from "rollup-plugin-sizeme";
-import pluginStyles from "rollup-plugin-styles";
 import { terser as pluginTerser } from "rollup-plugin-terser";
+import sass from "sass";
 
 import buildHtml from "./src/html.js";
 
@@ -38,21 +41,24 @@ export default {
   plugins: [
     pluginResolve(),
     pluginTypescript({ outputToFilesystem: false }),
-    pluginStyles({
-      extensions: [".scss"],
-      mode: "emit",
-      plugins: [
-        autoprefixer(),
-        csso({
-          comments: false,
-        }),
-      ].filter(Boolean),
-      sourceMap: false,
-    }),
     pluginStylesLit({
       include: ["**/*.scss"],
-      title: "Home | Blah",
+      transform: async (_, { filePath }) => {
+        const compiled = sass.compile(filePath).css;
+        return postcss([
+          autoprefixer(),
+          csso({
+            comments: false,
+          }),
+          cssModules({
+            generateScopedName: "[hash:base64:3]",
+          }),
+        ])
+          .process(compiled, { from: filePath })
+          .then((result) => result.css);
+      },
     }),
+    pluginJSON(),
     pluginLiterals(),
     pluginTerser({
       compress: {
@@ -83,7 +89,7 @@ export default {
       },
       module: true,
     }),
-    pluginHtml({
+    pluginHTML({
       template: buildHtml,
       title: "Home | Uhh",
     }),

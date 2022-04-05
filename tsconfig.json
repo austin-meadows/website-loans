@@ -9,6 +9,7 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "noEmit": true,
+    "resolveJsonModule": true,
     "rootDir": "./",
     "strict": true,
     "target": "ES2021"

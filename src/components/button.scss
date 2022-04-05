@@ -71,7 +71,7 @@ $_border-height: 4px;
 
   @include button-color();
 
-  &.secondary {
+  &._2 {
     @include button-color("gray");
   }
 }

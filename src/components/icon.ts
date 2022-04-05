@@ -10,8 +10,6 @@ export default class Button extends LitElement {
   @property({ type: Object }) private readonly icon = {};
 
   protected render() {
-    console.info("c-icon | Rendered:", this.icon);
-
     return html`
       <svg
         role="img"
