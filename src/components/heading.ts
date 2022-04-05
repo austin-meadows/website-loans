@@ -4,22 +4,27 @@ import { customElement, property } from "lit/decorators.js";
 import STYLE from "./heading.scss";
 import NAME from "./heading.scss.json";
 
-export enum TYPE {
-  SECONDARY = "_2",
-  TERTIARY = "_3",
+export enum LEVEL {
+  TWO = "_2",
+  THREE = "_3",
 }
 @customElement("c-heading")
 export default class Heading extends LitElement {
   static readonly styles = STYLE;
 
-  @property({ type: String }) type: TYPE | null = null;
+  @property({ type: String }) private readonly level: LEVEL | null = null;
+
+  @property({ type: Boolean }) private readonly isBold = false;
 
   protected render() {
-    console.log("There's a heading?");
-
-    const type = this.type ? ` ${NAME[this.type]}` : "";
+    const level = this.level ? ` ${NAME[this.level]}` : "";
+    const bold = this.isBold ? ` ${NAME._bold}` : "";
     return html`
-      <span class="${NAME.heading}${type}" role="heading">
+      <span
+        class="${NAME.heading}${level}${bold}"
+        role="heading"
+        aria-level="1"
+      >
         <slot></slot>
       </span>
     `;

@@ -1,7 +1,20 @@
 :host,
-svg {
+.svg {
   display: inline-block;
-  width: var(--font-size_0);
-  height: var(--font-size_0);
   pointer-events: none;
+}
+
+.svg {
+  height: var(--font-size_0);
+  width: var(--font-size_0);
+
+  &._small {
+    height: var(--font-size_-1);
+    width: var(--font-size_-1);
+  }
+
+  &._large {
+    height: var(--font-size_2);
+    width: var(--font-size_2);
+  }
 }

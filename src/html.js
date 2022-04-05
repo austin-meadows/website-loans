@@ -73,6 +73,13 @@ const template = async ({ title }) => {
       rel="preload"
       type="font/woff2"
     />
+    <link
+      href="https://fonts.gstatic.com/s/cabin/v18/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkbqDH7alwUzuA_q9Bg.woff"
+      as="font"
+      crossorigin="anonymous"
+      rel="preload"
+      type="font/woff2"
+    />
 
     <!---------- Assets ---------->
     <link

@@ -6,6 +6,7 @@ import "../components/heading";
 import "../components/link";
 import "../layout/card";
 import "../layout/grid";
+import { ALIGNMENT } from "../layout/row";
 import "../layout/section";
 
 @customElement("v-storyboard")
@@ -45,6 +46,9 @@ export default class Storyboard extends LitElement {
         <l-grid>
           <l-card><c-heading>Heading 1</c-heading></l-card>
         </l-grid>
+        <l-row alignment="${ALIGNMENT.CENTER}">
+          <c-heading .isBold=${true}>Heading 1</c-heading>
+        </l-row>
       </l-section>
     `;
   }

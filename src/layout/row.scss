@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+
+.row {
+  display: flex;
+
+  &._center {
+    text-align: center;
+    justify-content: center;
+  }
+  &._right {
+    justify-content: flex-end;
+    text-align: right;
+  }
+}

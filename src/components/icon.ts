@@ -2,7 +2,12 @@ import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 import STYLE from "./icon.scss";
+import NAME from "./icon.scss.json";
 
+export enum SIZE {
+  SMALL = "_small",
+  LARGE = "_large",
+}
 @customElement("c-icon")
 export default class Button extends LitElement {
   static readonly styles = STYLE;
@@ -11,9 +16,13 @@ export default class Button extends LitElement {
     icon: [0, 0, null, ""],
   };
 
+  @property({ type: String }) private readonly size: SIZE | null = null;
+
   protected render() {
+    const size = this.size ? ` ${NAME[this.size]}` : "";
     return html`
       <svg
+        class="${NAME.svg}${size}"
         role="img"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 ${this.icon.icon[0]} ${this.icon.icon[1]}"

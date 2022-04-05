@@ -5,6 +5,10 @@
 .heading {
   font-size: var(--font-size_3);
 
+  &._bold {
+    font-weight: 700;
+  }
+
   &._2 {
     font-size: var(--font-size_2);
   }
