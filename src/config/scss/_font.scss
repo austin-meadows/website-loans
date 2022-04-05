@@ -1,5 +1,9 @@
 $family: "Cabin", sans-serif;
-$size: 14px;
+$size_-1: 12px;
+$size_0: 14px;
+$size_1: 18px;
+$size_2: 22px;
+$size_3: 26px;
 
 @font-face {
   font-family: "Cabin";
@@ -16,5 +20,9 @@ $size: 14px;
 
 :root {
   --font-family: #{$family};
-  --font-size: #{$size};
+  --font-size_-1: #{$size_-1};
+  --font-size_0: #{$size_0};
+  --font-size_1: #{$size_1};
+  --font-size_2: #{$size_2};
+  --font-size_3: #{$size_3};
 }

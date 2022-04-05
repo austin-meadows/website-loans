@@ -1,7 +1,8 @@
 import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
 
-import { TYPE } from "../components/button";
+import { TYPE as ButtonType } from "../components/button";
+import "../components/heading";
 import "../components/link";
 import "../layout/card";
 import "../layout/grid";
@@ -14,11 +15,11 @@ export default class Storyboard extends LitElement {
       <h1>Button</h1>
       <l-section>
         <c-button>Button Primary</c-button>
-        <c-button type="${TYPE.SECONDARY}">Button Secondary</c-button>
+        <c-button type="${ButtonType.SECONDARY}">Button Secondary</c-button>
         <c-button>Button Tertiary</c-button>
         <div>
           <c-button>Continue</c-button>
-          <c-button type="${TYPE.SECONDARY}">Cancel</c-button>
+          <c-button type="${ButtonType.SECONDARY}">Cancel</c-button>
         </div>
       </l-section>
 
@@ -36,6 +37,13 @@ export default class Storyboard extends LitElement {
           <l-card>Content</l-card>
           <l-card>Content</l-card>
           <l-card>Content</l-card>
+        </l-grid>
+      </l-section>
+
+      <h1>Heading</h1>
+      <l-section>
+        <l-grid>
+          <l-card><c-heading>Heading 1</c-heading></l-card>
         </l-grid>
       </l-section>
     `;

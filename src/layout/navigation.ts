@@ -29,7 +29,7 @@ export default class Navigation extends LitElement {
     return html`
       <header>
         <nav id="${NAME.nav}">
-          <div class="1">
+          <div class="${NAME.links}">
             <a class="${NAME["nav-link"]}" href="/">
               <c-icon .icon="${faSeedling}"></c-icon>
               Loans

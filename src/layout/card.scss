@@ -1,21 +1,26 @@
+@use "../utils/scss/shadow";
+
 :host {
   display: block;
 }
 
 .container {
-  background-color: var(--color-primary_1);
-  border-radius: calc(var(--font-size) * 1.5);
-  display: flex;
+  @include shadow.add(10px);
+  @include shadow.color("primary", 2px);
+
   height: 300px;
-  overflow: hidden;
-  position: relative;
-  text-decoration: none;
-  user-select: none;
-  width: 100%;
-  transition: all 0.1s linear;
+
+  &:not(:hover)::before {
+    border-width: 1px;
+  }
 
   &:hover {
-    background: var(--color-primary_2);
-    transform: translate3d(0px, 0px, 0px) scale(1.05);
+    transform: translate3d(0px, 0px, 0px) scale(1.025);
   }
+}
+
+.content {
+  display: grid;
+  justify-content: center;
+  margin: var(--font-size_-1) 0;
 }

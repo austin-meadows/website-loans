@@ -1,0 +1,15 @@
+:host {
+  display: inline-block;
+}
+
+.heading {
+  font-size: var(--font-size_3);
+
+  &._2 {
+    font-size: var(--font-size_2);
+  }
+
+  &._3 {
+    font-size: var(--font-size_1);
+  }
+}

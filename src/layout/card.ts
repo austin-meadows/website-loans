@@ -9,6 +9,12 @@ export default class Card extends LitElement {
   static readonly styles = STYLE;
 
   protected render() {
-    return html`<div class="${NAME.container}"><slot></slot></div>`;
+    return html`
+      <div class="${NAME.container}">
+        <div class="${NAME.content}">
+          <slot></slot>
+        </div>
+      </div>
+    `;
   }
 }

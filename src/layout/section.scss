@@ -2,18 +2,18 @@
 
 :host {
   display: block;
-  margin: var(--font-size);
-  padding: calc(var(--font-size) * 7);
+  margin: var(--font-size_0);
+  padding: calc(var(--font-size_0) * 7);
 
   @media screen and (max-width: breakpoints.$large) {
-    padding: calc(var(--font-size) * 5);
+    padding: calc(var(--font-size_0) * 5);
   }
 
   @media screen and (max-width: breakpoints.$medium) {
-    padding: calc(var(--font-size) * 3);
+    padding: calc(var(--font-size_0) * 3);
   }
 
   @media screen and (max-width: breakpoints.$small) {
-    padding: calc(var(--font-size) * 1);
+    padding: calc(var(--font-size_0) * 1);
   }
 }
