@@ -1,7 +1,7 @@
 import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
 
-import style from "./row.scss";
+import style from "./column.scss";
 
 @customElement("l-column")
 export default class Column extends LitElement {

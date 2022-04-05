@@ -5,7 +5,9 @@
 }
 
 #nav {
-  margin: 5px 5px 10px;
+  display: grid;
+  margin: calc(var(--font-size) / 2) var(--font-size) var(--font-size);
+  grid-template-columns: 1fr auto;
 }
 
 .nav-link {

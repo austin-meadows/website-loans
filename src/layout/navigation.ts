@@ -1,7 +1,9 @@
 import {
-  faHouse,
   faArrowRightToBracket,
+  faCircleInfo,
   faFileImage,
+  faGraduationCap,
+  // faHouse,
   faSeedling,
 } from "@fortawesome/free-solid-svg-icons";
 import { LitElement, html } from "lit";
@@ -25,38 +27,56 @@ export default class Navigation extends LitElement {
 
   protected render() {
     return html`
-      <nav id="nav">
-        <a class="nav-link" href="/">
-          <c-icon .icon="${faSeedling}"></c-icon>
-          Loans
-        </a>
-        <a
-          @click="${this.handleClick}"
-          class="nav-link${Navigation.initUrl === "/" ? " active" : ""}"
-          href="/"
-        >
-          <c-icon .icon="${faHouse}"></c-icon>
-          Home
-        </a>
-        <a
-          @click="${this.handleClick}"
-          class="nav-link${Navigation.initUrl === "/sign-in" ? " active" : ""}"
-          href="/sign-in"
-        >
-          <c-icon .icon="${faArrowRightToBracket}"></c-icon>
-          Sign In
-        </a>
-        <a
-          @click="${this.handleClick}"
-          class="nav-link${Navigation.initUrl === "/storyboard"
-            ? " active"
-            : ""}"
-          href="/storyboard"
-        >
-          <c-icon .icon="${faFileImage}"></c-icon>
-          Storyboard
-        </a>
-      </nav>
+      <header>
+        <nav id="nav">
+          <div class="1">
+            <a class="nav-link" href="/">
+              <c-icon .icon="${faSeedling}"></c-icon>
+              Loans
+            </a>
+            <a
+              @click="${this.handleClick}"
+              class="nav-link${Navigation.initUrl === "/" ? " active" : ""}"
+              href="/"
+            >
+              <c-icon .icon="${faCircleInfo}"></c-icon>
+              About
+            </a>
+            <a
+              @click="${this.handleClick}"
+              class="nav-link${Navigation.initUrl === "/sign-in"
+                ? " active"
+                : ""}"
+              href="/"
+            >
+              <c-icon .icon="${faGraduationCap}"></c-icon>
+              Students
+            </a>
+            <a
+              @click="${this.handleClick}"
+              class="nav-link${Navigation.initUrl === "/storyboard"
+                ? " active"
+                : ""}"
+              href="/storyboard"
+            >
+              <c-icon .icon="${faFileImage}"></c-icon>
+              Storyboard
+            </a>
+          </div>
+          <div class="2">
+            <a
+              @click="${this.handleClick}"
+              class="nav-link${Navigation.initUrl === "/sign-in"
+                ? " active"
+                : ""}"
+              href="/sign-in"
+            >
+              <c-icon .icon="${faArrowRightToBracket}"></c-icon>
+              Sign In
+            </a>
+          </div>
+        </nav>
+      </header>
     `;
   }
 
@@ -65,7 +85,7 @@ export default class Navigation extends LitElement {
     const target = event.target as Element;
     if (this.active === target) return;
     this.active = target;
-    target.parentElement
+    target.parentElement?.parentElement
       ?.getElementsByClassName(ACTIVE)[0]
       ?.classList.remove(ACTIVE);
     target.classList.add(ACTIVE);
