@@ -2,6 +2,7 @@ import {
   faHouse,
   faArrowRightToBracket,
   faFileImage,
+  faSeedling,
 } from "@fortawesome/free-solid-svg-icons";
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
@@ -25,6 +26,10 @@ export default class Navigation extends LitElement {
   protected render() {
     return html`
       <nav id="nav">
+        <a class="nav-link" href="/">
+          <c-icon .icon="${faSeedling}"></c-icon>
+          Loans
+        </a>
         <a
           @click="${this.handleClick}"
           class="nav-link${Navigation.initUrl === "/" ? " active" : ""}"

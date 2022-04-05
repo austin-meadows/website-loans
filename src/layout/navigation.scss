@@ -9,13 +9,16 @@
 }
 
 .nav-link {
+  $_thickness: 3px;
+
   border-radius: 5px;
   color: var(--color-black);
   display: inline-block;
-  font-size: 18px;
+  font-size: var(--font-size);
   height: var(--font-size);
   line-height: var(--font-size);
-  padding: 8px 14px 12px;
+  padding: calc(var(--font-size) / 2) calc(var(--font-size) / 1.5)
+    calc(var(--font-size) / 2 + $_thickness);
   text-decoration: none;
   user-select: none;
 
@@ -24,7 +27,7 @@
     text-decoration: underline;
     text-decoration: underline;
     text-decoration-color: var(--color-primary_0);
-    text-decoration-thickness: 3px;
+    text-decoration-thickness: $_thickness;
   }
 
   &.active {
@@ -33,6 +36,10 @@
 
   &:hover:not(.active) {
     text-decoration-color: var(--color-primary_3);
+  }
+
+  &:first-child {
+    margin-right: var(--font-size);
   }
 
   & + .nav-link:not(:last-child) {
