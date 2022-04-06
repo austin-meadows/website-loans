@@ -1,6 +1,9 @@
-$primary: #5ac58c;
+$primary: #79cda0;
+$yellow: #faf05e;
+$red: #db5f5d;
+$orange: #f2a359;
+$blue: #4199e0;
 $gray: #9fa09e;
-$blue: #8e9dcc;
 $black: #0f1108;
 $white: #fbfffd;
 
@@ -12,6 +15,38 @@ $white: #fbfffd;
   --color-primary_1: #{adjust-color($primary, $lightness: 10%)};
   --color-primary_2: #{adjust-color($primary, $lightness: 20%)};
   --color-primary_3: #{adjust-color($primary, $lightness: 30%)};
+
+  --color-yellow_-3: #{adjust-color($yellow, $lightness: -30%)};
+  --color-yellow_-2: #{adjust-color($yellow, $lightness: -20%)};
+  --color-yellow_-1: #{adjust-color($yellow, $lightness: -10%)};
+  --color-yellow_0: #{$yellow};
+  --color-yellow_1: #{adjust-color($yellow, $lightness: 10%)};
+  --color-yellow_2: #{adjust-color($yellow, $lightness: 20%)};
+  --color-yellow_3: #{adjust-color($yellow, $lightness: 30%)};
+
+  --color-red_-3: #{adjust-color($red, $lightness: -30%)};
+  --color-red_-2: #{adjust-color($red, $lightness: -20%)};
+  --color-red_-1: #{adjust-color($red, $lightness: -10%)};
+  --color-red_0: #{$red};
+  --color-red_1: #{adjust-color($red, $lightness: 10%)};
+  --color-red_2: #{adjust-color($red, $lightness: 20%)};
+  --color-red_3: #{adjust-color($red, $lightness: 30%)};
+
+  --color-orange_-3: #{adjust-color($orange, $lightness: -30%)};
+  --color-orange_-2: #{adjust-color($orange, $lightness: -20%)};
+  --color-orange_-1: #{adjust-color($orange, $lightness: -10%)};
+  --color-orange_0: #{$orange};
+  --color-orange_1: #{adjust-color($orange, $lightness: 10%)};
+  --color-orange_2: #{adjust-color($orange, $lightness: 20%)};
+  --color-orange_3: #{adjust-color($orange, $lightness: 30%)};
+
+  --color-blue_-3: #{adjust-color($blue, $lightness: -30%)};
+  --color-blue_-2: #{adjust-color($blue, $lightness: -20%)};
+  --color-blue_-1: #{adjust-color($blue, $lightness: -10%)};
+  --color-blue_0: #{$blue};
+  --color-blue_1: #{adjust-color($blue, $lightness: 10%)};
+  --color-blue_2: #{adjust-color($blue, $lightness: 20%)};
+  --color-blue_3: #{adjust-color($blue, $lightness: 30%)};
 
   --color-gray_-3: #{adjust-color($gray, $lightness: -30%)};
   --color-gray_-2: #{adjust-color($gray, $lightness: -20%)};

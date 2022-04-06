@@ -1,27 +1,24 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
+import COLOR from "../utils/js/color";
+
 import STYLE from "./color.scss";
 import NAME from "./color.scss.json";
 
-export enum TYPE {
-  "PRIMARY_-1" = "primary_-1",
-  PRIMARY_0 = "primary_0",
-  GRAY = "gray_0",
-}
 @customElement("c-color")
 export default class Color extends LitElement {
   static readonly styles = STYLE;
 
-  @property({ type: String }) private readonly type: TYPE | null = null;
+  @property({ type: String }) private readonly color: COLOR | null = null;
 
   @property({ type: Boolean }) private readonly isBold = false;
 
   protected render() {
-    const type = this.type ? NAME[this.type] : "";
+    const color = this.color ? NAME[this.color] : "";
     const bold = this.isBold ? ` ${NAME._isBold}` : "";
     return html`
-      <span class="${type}${bold}">
+      <span class="${color}${bold}">
         <slot></slot>
       </span>
     `;

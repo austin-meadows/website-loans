@@ -9,6 +9,8 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "noEmit": true,
+    // Temporary? For COLOR enum
+    "noImplicitAny": false,
     "resolveJsonModule": true,
     "rootDir": "./",
     "strict": true,
