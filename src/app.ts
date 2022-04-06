@@ -9,6 +9,7 @@ export default class App extends LitElement {
   static readonly styles = css`
     :host {
       display: block;
+      min-width: 320px;
     }
   `;
 

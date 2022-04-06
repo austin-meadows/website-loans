@@ -2,6 +2,8 @@
 
 :host {
   display: block;
+  max-width: 1520px;
+  margin: auto;
 }
 
 @mixin _columns($count: 4) {
