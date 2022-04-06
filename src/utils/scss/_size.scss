@@ -1,0 +1,41 @@
+/* TODO: Find out a better way for these to update automatically when
+a size is added or removed */
+
+@mixin apply($properties...) {
+  @for $i from 0 to length($properties) {
+    &._size-0_75 {
+      #{nth($properties, $i + 1)}: var(--font-size-0_75);
+    }
+    &._size-1 {
+      #{nth($properties, $i + 1)}: var(--font-size-1);
+    }
+    &._size-1_25 {
+      #{nth($properties, $i + 1)}: var(--font-size-1_25);
+    }
+
+    &._size-1_50 {
+      #{nth($properties, $i + 1)}: var(--font-size-1_50);
+    }
+    &._size-1_75 {
+      #{nth($properties, $i + 1)}: var(--font-size-1_75);
+    }
+
+    &._size-2 {
+      #{nth($properties, $i + 1)}: var(--font-size-2);
+    }
+    &._size-2_25 {
+      #{nth($properties, $i + 1)}: var(--font-size-2_25);
+    }
+
+    &._size-2_50 {
+      #{nth($properties, $i + 1)}: var(--font-size-2_50);
+    }
+    &._size-2_75 {
+      #{nth($properties, $i + 1)}: var(--font-size-2_75);
+    }
+
+    &._size-3 {
+      #{nth($properties, $i + 1)}: var(--font-size-3);
+    }
+  }
+}

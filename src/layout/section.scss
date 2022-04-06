@@ -1,55 +1,25 @@
 @use "../config/scss/breakpoints";
+@use "../utils/scss/color";
+
 :host {
   display: block;
 }
 
 .section {
   display: block;
-  padding: calc(var(--font-size_0) * 8);
+  padding: calc(var(--font-size-1) * 6) calc(var(--font-size-1) * 8);
 
   @media screen and (max-width: breakpoints.$large) {
-    padding: calc(var(--font-size_0) * 5);
+    padding: calc(var(--font-size-1) * 5) calc(var(--font-size-1) * 5);
   }
 
   @media screen and (max-width: breakpoints.$medium) {
-    padding: calc(var(--font-size_0) * 3);
+    padding: calc(var(--font-size-1) * 4) calc(var(--font-size-1) * 1.75);
   }
 
   @media screen and (max-width: breakpoints.$small) {
-    padding: calc(var(--font-size_0) * 1);
+    padding: calc(var(--font-size-1) * 3) calc(var(--font-size-1) * 0.75);
   }
 
-  &._gray_6 {
-    background-color: var(--color-gray_6);
-  }
-  &._gray_5 {
-    background-color: var(--color-gray_5);
-  }
-  &._gray_4 {
-    background-color: var(--color-gray_4);
-  }
-  &._gray_3 {
-    background-color: var(--color-gray_3);
-  }
-  &._gray_2 {
-    background-color: var(--color-gray_2);
-  }
-  &._gray_1 {
-    background-color: var(--color-gray_1);
-  }
-  &._gray_0 {
-    background-color: var(--color-gray_0);
-  }
-  &._primary_3 {
-    background-color: var(--color-primary_3);
-  }
-  &._primary_2 {
-    background-color: var(--color-primary_2);
-  }
-  &._primary_1 {
-    background-color: var(--color-primary_1);
-  }
-  &._primary_0 {
-    background-color: var(--color-primary_0);
-  }
+  @include color.apply("background-color");
 }

@@ -1,23 +1,13 @@
+@use "../utils/scss/color";
+
 :host {
   display: inline;
 }
 
-._isBold {
-  font-weight: 700;
-}
+.color {
+  @include color.apply("color");
 
-._primary_0 {
-  color: var(--color-primary_0);
-}
-._primary_-1 {
-  color: var(--color-primary_-1);
-}
-._gray_0 {
-  color: var(--color-gray_0);
-}
-._gray_-1 {
-  color: var(--color-gray_-1);
-}
-._gray_-2 {
-  color: var(--color-gray_-2);
+  &._isBold {
+    font-weight: 700;
+  }
 }

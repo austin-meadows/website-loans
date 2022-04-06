@@ -1,3 +1,4 @@
+@use "../utils/scss/color";
 @use "../utils/scss/shadow";
 
 :host {
@@ -9,13 +10,13 @@
     @include shadow.add(10px);
     @include shadow.color("primary", 2px);
 
-    &._red_0 {
+    &._color-red_0 {
       @include shadow.color("red", 2px);
     }
-    &._blue_0 {
+    &._color-blue_0 {
       @include shadow.color("blue", 2px);
     }
-    &._yellow_0 {
+    &._color-yellow_0 {
       @include shadow.color("yellow", 2px);
 
       svg {
@@ -23,13 +24,13 @@
         opacity: 0.1;
       }
     }
-    &._orange_0 {
+    &._color-orange_0 {
       @include shadow.color("orange", 2px);
     }
-    ._primary_0 {
+    &._color-primary_0 {
       @include shadow.color("primary", 2px);
     }
-    ._gray_0 {
+    &._color-gray_0 {
       @include shadow.color("gray", 2px);
     }
 
@@ -47,23 +48,12 @@
   }
 
   &._flat {
-    border-radius: var(--font-size_2);
+    border-radius: var(--font-size-2);
     background-color: var(--color-gray_3);
     min-height: 400px;
-    padding: var(--font-size_3);
+    padding: var(--font-size-3);
 
-    &._primary_2 {
-      background-color: var(--color-primary_2);
-    }
-    &._primary_1 {
-      background-color: var(--color-primary_1);
-    }
-    &._blue_2 {
-      background-color: var(--color-blue_2);
-    }
-    &._yellow_2 {
-      background-color: var(--color-yellow_2);
-    }
+    @include color.apply("background-color");
   }
 
   overflow: hidden;
@@ -77,7 +67,7 @@
 
     .content {
       text-align: center;
-      padding-bottom: var(--font-size_1);
+      padding-bottom: var(--font-size-1);
     }
   }
 }

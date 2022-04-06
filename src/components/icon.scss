@@ -1,20 +1,15 @@
+@use "../utils/scss/size";
+
 :host,
 .svg {
-  display: inline-block;
+  display: inline;
   pointer-events: none;
+  line-height: 0.5;
 }
 
 .svg {
-  height: var(--font-size_0);
-  width: var(--font-size_0);
+  @include size.apply("height", "width");
 
-  &._small {
-    height: var(--font-size_-1);
-    width: var(--font-size_-1);
-  }
-
-  &._large {
-    height: var(--font-size_2);
-    width: var(--font-size_2);
-  }
+  width: var(--font-size-1);
+  height: var(--font-size-1);
 }

@@ -8,7 +8,7 @@
 
 #nav {
   display: grid;
-  margin: calc(var(--font-size_0) / 2) var(--font-size_0) var(--font-size_0);
+  margin: calc(var(--font-size-1) / 2) var(--font-size-1) var(--font-size-1);
   grid-template-columns: 1fr auto;
 }
 
@@ -18,11 +18,11 @@
   border-radius: 5px;
   color: var(--color-black);
   display: inline-block;
-  font-size: var(--font-size_0);
-  height: var(--font-size_0);
-  line-height: var(--font-size_0);
-  padding: calc(var(--font-size_0) / 2) calc(var(--font-size_0) / 1.5)
-    calc(var(--font-size_0) / 2 + $_thickness);
+  font-size: var(--font-size-1);
+  height: var(--font-size-1);
+  line-height: var(--font-size-1);
+  padding: calc(var(--font-size-1) / 2) calc(var(--font-size-1) / 1.5)
+    calc(var(--font-size-1) / 2 + $_thickness);
   text-decoration: none;
   user-select: none;
 
@@ -50,8 +50,8 @@
 .links {
   .nav-link:first-child {
     color: var(--color-primary_-2);
-    padding-right: calc(var(--font-size_0) * 1.5);
-    margin-right: calc(var(--font-size_0) * 0.75);
+    padding-right: calc(var(--font-size-1) * 1.5);
+    margin-right: calc(var(--font-size-1) * 0.75);
     border-right: 1px solid var(--color-gray_2);
     border-radius: 0;
   }

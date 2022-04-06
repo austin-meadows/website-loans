@@ -4,7 +4,7 @@ import { customElement, property } from "lit/decorators.js";
 import STYLE from "./grid.scss";
 import NAME from "./grid.scss.json";
 
-export enum SIZE {
+export enum COLUMNS {
   "TWO" = "_2",
   "THREE" = "_3",
 }
@@ -12,13 +12,12 @@ export enum SIZE {
 export default class Grid extends LitElement {
   static readonly styles = STYLE;
 
-  @property({ type: String }) private readonly size: SIZE | null = null;
+  @property({ type: String }) private readonly columns: COLUMNS | null = null;
 
   protected render() {
-    const size: string = this.size ? ` ${NAME[this.size]}` : "";
-
+    const columns: string = this.columns ? ` ${NAME[this.columns]}` : "";
     return html`
-      <div class="${NAME.grid}${size}">
+      <div class="${NAME.grid}${columns}">
         <slot></slot>
       </div>
     `;

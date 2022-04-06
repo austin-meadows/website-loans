@@ -1,19 +1,17 @@
+@use "../utils/scss/size";
+
 :host {
   display: block;
 }
 
 .heading {
-  font-size: var(--font-size_3);
+  @include size.apply("font-size");
+
+  display: inline-block;
+  font-size: var(--font-size-3);
+  margin-bottom: var(--font-size-0_75);
 
   &._bold {
     font-weight: 700;
-  }
-
-  &._2 {
-    font-size: var(--font-size_2);
-  }
-
-  &._3 {
-    font-size: var(--font-size_1);
   }
 }

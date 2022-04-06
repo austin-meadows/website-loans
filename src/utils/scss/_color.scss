@@ -1,0 +1,150 @@
+/* TODO: Find out a better way for these to update automatically when
+a color is added or removed */
+@mixin apply($properties...) {
+  @for $i from 0 to length($properties) {
+    &._color-blue_-1 {
+      #{nth($properties, $i + 1)}: var(--color-blue_-1);
+    }
+    &._color-blue_-2 {
+      #{nth($properties, $i + 1)}: var(--color-blue_-2);
+    }
+    &._color-blue_-3 {
+      #{nth($properties, $i + 1)}: var(--color-blue_-3);
+    }
+    &._color-blue_0 {
+      #{nth($properties, $i + 1)}: var(--color-blue_0);
+    }
+    &._color-blue_1 {
+      #{nth($properties, $i + 1)}: var(--color-blue_1);
+    }
+    &._color-blue_2 {
+      #{nth($properties, $i + 1)}: var(--color-blue_2);
+    }
+    &._color-blue_3 {
+      #{nth($properties, $i + 1)}: var(--color-blue_3);
+    }
+    &._color-gray_-1 {
+      #{nth($properties, $i + 1)}: var(--color-gray_-1);
+    }
+    &._color-gray_-2 {
+      #{nth($properties, $i + 1)}: var(--color-gray_-2);
+    }
+    &._color-gray_-3 {
+      #{nth($properties, $i + 1)}: var(--color-gray_-3);
+    }
+    &._color-gray_-4 {
+      #{nth($properties, $i + 1)}: var(--color-gray_-4);
+    }
+    &._color-gray_-5 {
+      #{nth($properties, $i + 1)}: var(--color-gray_-5);
+    }
+    &._color-gray_-6 {
+      #{nth($properties, $i + 1)}: var(--color-gray_-6);
+    }
+    &._color-gray_0 {
+      #{nth($properties, $i + 1)}: var(--color-gray_0);
+    }
+    &._color-gray_1 {
+      #{nth($properties, $i + 1)}: var(--color-gray_1);
+    }
+    &._color-gray_2 {
+      #{nth($properties, $i + 1)}: var(--color-gray_2);
+    }
+    &._color-gray_3 {
+      #{nth($properties, $i + 1)}: var(--color-gray_3);
+    }
+    &._color-gray_4 {
+      #{nth($properties, $i + 1)}: var(--color-gray_4);
+    }
+    &._color-gray_5 {
+      #{nth($properties, $i + 1)}: var(--color-gray_5);
+    }
+    &._color-gray_6 {
+      #{nth($properties, $i + 1)}: var(--color-gray_6);
+    }
+    &._color-orange_-1 {
+      #{nth($properties, $i + 1)}: var(--color-orange_-1);
+    }
+    &._color-orange_-2 {
+      #{nth($properties, $i + 1)}: var(--color-orange_-2);
+    }
+    &._color-orange_-3 {
+      #{nth($properties, $i + 1)}: var(--color-orange_-3);
+    }
+    &._color-orange_0 {
+      #{nth($properties, $i + 1)}: var(--color-orange_0);
+    }
+    &._color-orange_1 {
+      #{nth($properties, $i + 1)}: var(--color-orange_1);
+    }
+    &._color-orange_2 {
+      #{nth($properties, $i + 1)}: var(--color-orange_2);
+    }
+    &._color-orange_3 {
+      #{nth($properties, $i + 1)}: var(--color-orange_3);
+    }
+    &._color-primary_-1 {
+      #{nth($properties, $i + 1)}: var(--color-primary_-1);
+    }
+    &._color-primary_-2 {
+      #{nth($properties, $i + 1)}: var(--color-primary_-2);
+    }
+    &._color-primary_-3 {
+      #{nth($properties, $i + 1)}: var(--color-primary_-3);
+    }
+    &._color-primary_0 {
+      #{nth($properties, $i + 1)}: var(--color-primary_0);
+    }
+    &._color-primary_1 {
+      #{nth($properties, $i + 1)}: var(--color-primary_1);
+    }
+    &._color-primary_2 {
+      #{nth($properties, $i + 1)}: var(--color-primary_2);
+    }
+    &._color-primary_3 {
+      #{nth($properties, $i + 1)}: var(--color-primary_3);
+    }
+    &._color-red_-1 {
+      #{nth($properties, $i + 1)}: var(--color-red_-1);
+    }
+    &._color-red_-2 {
+      #{nth($properties, $i + 1)}: var(--color-red_-2);
+    }
+    &._color-red_-3 {
+      #{nth($properties, $i + 1)}: var(--color-red_-3);
+    }
+    &._color-red_0 {
+      #{nth($properties, $i + 1)}: var(--color-red_0);
+    }
+    &._color-red_1 {
+      #{nth($properties, $i + 1)}: var(--color-red_1);
+    }
+    &._color-red_2 {
+      #{nth($properties, $i + 1)}: var(--color-red_2);
+    }
+    &._color-red_3 {
+      #{nth($properties, $i + 1)}: var(--color-red_3);
+    }
+    &._color-yellow_-1 {
+      #{nth($properties, $i + 1)}: var(--color-yellow_-1);
+    }
+    &._color-yellow_-2 {
+      #{nth($properties, $i + 1)}: var(--color-yellow_-2);
+    }
+    &._color-yellow_-3 {
+      #{nth($properties, $i + 1)}: var(--color-yellow_-3);
+    }
+    &._color-yellow_0 {
+      #{nth($properties, $i + 1)}: var(--color-yellow_0);
+    }
+    &._color-yellow_1 {
+      #{nth($properties, $i + 1)}: var(--color-yellow_1);
+    }
+    &._color-yellow_2 {
+      #{nth($properties, $i + 1)}: var(--color-yellow_2);
+    }
+    &._color-yellow_3 {
+      #{nth($properties, $i + 1)}: var(--color-yellow_3);
+    }
+  }
+}

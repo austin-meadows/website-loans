@@ -1,13 +1,11 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
+import SIZE from "../utils/js/size";
+
 import STYLE from "./icon.scss";
 import NAME from "./icon.scss.json";
 
-export enum SIZE {
-  SMALL = "_small",
-  LARGE = "_large",
-}
 @customElement("c-icon")
 export default class Button extends LitElement {
   static readonly styles = STYLE;
@@ -23,7 +21,7 @@ export default class Button extends LitElement {
     return html`
       <svg
         class="${NAME.svg}${size}"
-        role="img"
+        role="presentation"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 ${this.icon.icon[0]} ${this.icon.icon[1]}"
       >
