@@ -66,18 +66,21 @@
 
 $_svg_width: 32px;
 .background {
-  position: absolute;
-  left: -33%;
-  top: -33%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: center;
+  left: 0;
   opacity: 0.33;
-  transform: rotate(45deg);
+  position: absolute;
+  top: 0;
+  width: 100%;
   z-index: -1;
-  width: ($_svg_width * 2) * 6;
-}
 
-svg {
-  color: var(--color-white);
-  margin: $_svg_width / 2;
-  width: $_svg_width;
-  height: $_svg_width;
+  svg {
+    color: var(--color-white);
+    height: $_svg_width;
+    margin: $_svg_width * 0.5;
+    transform: rotate(45deg);
+    width: $_svg_width;
+  }
 }

@@ -21,7 +21,11 @@ export default class Card extends LitElement {
   @property({ type: Object }) private readonly icon = { icon: [] };
 
   // Could accept array of icons and randomly / stagger them
-  protected renderBackground(icon = [0, 0, null, ""]): Array<TemplateResult> {
+  protected renderBackground(icon = [0, 0, null, ""]): TemplateResult | null {
+    if (!icon[4]) {
+      return null;
+    }
+
     const result: Array<TemplateResult> = [];
     const bgIcon = html`
       <svg
@@ -32,10 +36,11 @@ export default class Card extends LitElement {
         <path fill="currentColor" d="${icon[4]}"></path>
       </svg>
     `;
-    for (let i = 0; i < 6 * 6 + 1; i += 1) {
+    for (let i = 0; i < 6 * 5; i += 1) {
       result.push(bgIcon);
     }
-    return result;
+
+    return html`<div class="${NAME.background}">${result}</div> `;
   }
 
   protected render() {
@@ -46,9 +51,7 @@ export default class Card extends LitElement {
         <div class="${NAME.content}">
           <slot></slot>
         </div>
-        <div class="${NAME.background}">
-          ${this.icon.icon.length && this.renderBackground(this.icon.icon)}
-        </div>
+        ${this.renderBackground(this.icon.icon)}
       </div>
     `;
   }

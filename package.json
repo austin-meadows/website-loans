@@ -53,7 +53,7 @@
   "scripts": {
     "_watch--build": "serve -s build",
     "_watch--serve": "cross-env WATCH=true rollup -c -w",
-    "build": "rollup -c",
+    "build": "cross-env NODE_ENV=production rollup -c",
     "lint": "eslint **/*.ts",
     "serve": "concurrently \"yarn _watch--build\" \"yarn _watch--serve\"",
     "sdk": "yarn dlx @yarnpkg/sdks"
