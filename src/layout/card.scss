@@ -5,22 +5,56 @@
 }
 
 .container {
-  @include shadow.add(10px);
-  @include shadow.color("primary", 2px);
+  &._tactile {
+    @include shadow.add(10px);
+    @include shadow.color("primary", 2px);
 
-  height: 275px;
+    &._red_0 {
+      @include shadow.color("red", 2px);
+    }
+    &._blue_0 {
+      @include shadow.color("blue", 2px);
+    }
+    &._yellow_0 {
+      @include shadow.color("yellow", 2px);
+
+      svg {
+        color: var(--color-black);
+        opacity: 0.1;
+      }
+    }
+    &._orange_0 {
+      @include shadow.color("orange", 2px);
+    }
+    ._primary_0 {
+      @include shadow.color("primary", 2px);
+    }
+    ._gray_0 {
+      @include shadow.color("gray", 2px);
+    }
+
+    user-select: none;
+    height: 275px;
+    transition: transform 0.2s;
+
+    &:not(:hover)::before {
+      border-width: 1px;
+    }
+
+    &:hover {
+      transform: translate3d(0px, 0px, 0px) scale(1.05);
+    }
+  }
+
+  &._flat {
+    border-radius: var(--font-size_2);
+    background-color: var(--color-gray_3);
+    min-height: 400px;
+    padding: var(--font-size_3);
+  }
+
   overflow: hidden;
   position: relative;
-  user-select: none;
-  transition: transform 0.2s;
-
-  &:not(:hover)::before {
-    border-width: 1px;
-  }
-
-  &:hover {
-    transform: translate3d(0px, 0px, 0px) scale(1.05);
-  }
 
   &._center {
     align-content: center;
@@ -33,34 +67,9 @@
       padding-bottom: var(--font-size_1);
     }
   }
-
-  &._red_0 {
-    @include shadow.color("red", 2px);
-  }
-  &._blue_0 {
-    @include shadow.color("blue", 2px);
-  }
-  &._yellow_0 {
-    @include shadow.color("yellow", 2px);
-
-    svg {
-      color: var(--color-black);
-      opacity: 0.1;
-    }
-  }
-  &._orange_0 {
-    @include shadow.color("orange", 2px);
-  }
-  ._primary_0 {
-    @include shadow.color("primary", 2px);
-  }
-  ._gray_0 {
-    @include shadow.color("gray", 2px);
-  }
 }
 
 .content {
-  margin: var(--font-size_-1) 0;
   z-index: 1;
 }
 

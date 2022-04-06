@@ -11,7 +11,7 @@ import { customElement } from "lit/decorators.js";
 
 import { LEVEL } from "../components/heading";
 import { SIZE } from "../components/icon";
-import { ALIGNMENT as CARD_ALIGNMENT } from "../layout/card";
+import { ALIGNMENT as CARD_ALIGNMENT, TYPE } from "../layout/card";
 import { SIZE as GRID_SIZE } from "../layout/grid";
 import { ALIGNMENT } from "../layout/row";
 import COLOR from "../utils/js/color";
@@ -105,8 +105,8 @@ export default class Home extends LitElement {
         <!-- // Blurb about Donating + generic profile List
         // Blurb about Listing (own section) + generic profile -->
         <l-grid size="${GRID_SIZE.TWO}">
-          <l-card>
-            <c-heading level="${LEVEL.THREE}" .isBold=${true}>Donate</c-heading>
+          <l-card type=${TYPE.FLAT}>
+            <c-heading level="${LEVEL.TWO}" .isBold=${true}>Donate</c-heading>
             Donate to students in need of help with their student loan debt.
             <br />
             There are many options to donate to individuals or many: - By field
