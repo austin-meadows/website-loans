@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+.text {
+  font-size: var(--font-size_0);
+
+  &._bold {
+    font-weight: 700;
+  }
+
+  &._1 {
+    font-size: var(--font-size_1);
+  }
+
+  &._2 {
+    font-size: var(--font-size_2);
+  }
+
+  &._3 {
+    font-size: var(--font-size_3);
+  }
+}

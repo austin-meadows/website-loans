@@ -39,8 +39,6 @@ export default {
     validate: true,
   },
   plugins: [
-    pluginResolve(),
-    pluginTypescript({ outputToFilesystem: false }),
     pluginStylesLit({
       include: ["**/*.scss"],
       transform: async (_, { filePath }) => {
@@ -58,8 +56,9 @@ export default {
           .then((result) => result.css);
       },
     }),
+    pluginResolve(),
+    pluginTypescript({ outputToFilesystem: false }),
     pluginJSON(),
-    pluginLiterals(),
     pluginTerser({
       compress: {
         booleans_as_integers: true,
@@ -89,6 +88,7 @@ export default {
       },
       module: true,
     }),
+    pluginLiterals(),
     pluginHTML({
       template: buildHtml,
       title: "Home | Uhh",

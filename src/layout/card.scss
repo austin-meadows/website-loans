@@ -51,6 +51,19 @@
     background-color: var(--color-gray_3);
     min-height: 400px;
     padding: var(--font-size_3);
+
+    &._primary_2 {
+      background-color: var(--color-primary_2);
+    }
+    &._primary_1 {
+      background-color: var(--color-primary_1);
+    }
+    &._blue_2 {
+      background-color: var(--color-blue_2);
+    }
+    &._yellow_2 {
+      background-color: var(--color-yellow_2);
+    }
   }
 
   overflow: hidden;

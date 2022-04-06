@@ -48,13 +48,19 @@ $white: #fbfffd;
   --color-blue_2: #{adjust-color($blue, $lightness: 20%)};
   --color-blue_3: #{adjust-color($blue, $lightness: 30%)};
 
-  --color-gray_-3: #{adjust-color($gray, $lightness: -30%)};
-  --color-gray_-2: #{adjust-color($gray, $lightness: -20%)};
-  --color-gray_-1: #{adjust-color($gray, $lightness: -10%)};
+  --color-gray_-6: #{adjust-color($gray, $lightness: -40%)};
+  --color-gray_-5: #{adjust-color($gray, $lightness: -35%)};
+  --color-gray_-4: #{adjust-color($gray, $lightness: -28%)};
+  --color-gray_-3: #{adjust-color($gray, $lightness: -21%)};
+  --color-gray_-2: #{adjust-color($gray, $lightness: -14%)};
+  --color-gray_-1: #{adjust-color($gray, $lightness: -7%)};
   --color-gray_0: #{$gray};
-  --color-gray_1: #{adjust-color($gray, $lightness: 10%)};
-  --color-gray_2: #{adjust-color($gray, $lightness: 20%)};
-  --color-gray_3: #{adjust-color($gray, $lightness: 30%)};
+  --color-gray_1: #{adjust-color($gray, $lightness: 7%)};
+  --color-gray_2: #{adjust-color($gray, $lightness: 14%)};
+  --color-gray_3: #{adjust-color($gray, $lightness: 21%)};
+  --color-gray_4: #{adjust-color($gray, $lightness: 28%)};
+  --color-gray_5: #{adjust-color($gray, $lightness: 35%)};
+  --color-gray_6: #{adjust-color($gray, $lightness: 40%)};
 
   --color-black: #{$black};
   --color-white: #{$white};

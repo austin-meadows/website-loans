@@ -1,15 +1,16 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-import STYLE from "./heading.scss";
-import NAME from "./heading.scss.json";
+import STYLE from "./text.scss";
+import NAME from "./text.scss.json";
 
 export enum SIZE {
+  ONE = "_1",
   TWO = "_2",
   THREE = "_3",
 }
-@customElement("c-heading")
-export default class Heading extends LitElement {
+@customElement("c-text")
+export default class Text extends LitElement {
   static readonly styles = STYLE;
 
   @property({ type: String }) private readonly size: SIZE | null = null;
@@ -21,7 +22,7 @@ export default class Heading extends LitElement {
     const bold = this.isBold ? ` ${NAME._bold}` : "";
 
     return html`
-      <span class="${NAME.heading}${size}${bold}" role="heading" aria-level="1">
+      <span class="${NAME.text}${size}${bold}">
         <slot></slot>
       </span>
     `;

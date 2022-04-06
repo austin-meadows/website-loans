@@ -1,9 +1,11 @@
 @use "../config/scss/breakpoints";
-
 :host {
   display: block;
-  margin: var(--font-size_0);
-  padding: calc(var(--font-size_0) * 7);
+}
+
+.section {
+  display: block;
+  padding: calc(var(--font-size_0) * 8);
 
   @media screen and (max-width: breakpoints.$large) {
     padding: calc(var(--font-size_0) * 5);
@@ -15,5 +17,39 @@
 
   @media screen and (max-width: breakpoints.$small) {
     padding: calc(var(--font-size_0) * 1);
+  }
+
+  &._gray_6 {
+    background-color: var(--color-gray_6);
+  }
+  &._gray_5 {
+    background-color: var(--color-gray_5);
+  }
+  &._gray_4 {
+    background-color: var(--color-gray_4);
+  }
+  &._gray_3 {
+    background-color: var(--color-gray_3);
+  }
+  &._gray_2 {
+    background-color: var(--color-gray_2);
+  }
+  &._gray_1 {
+    background-color: var(--color-gray_1);
+  }
+  &._gray_0 {
+    background-color: var(--color-gray_0);
+  }
+  &._primary_3 {
+    background-color: var(--color-primary_3);
+  }
+  &._primary_2 {
+    background-color: var(--color-primary_2);
+  }
+  &._primary_1 {
+    background-color: var(--color-primary_1);
+  }
+  &._primary_0 {
+    background-color: var(--color-primary_0);
   }
 }

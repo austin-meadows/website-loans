@@ -17,10 +17,6 @@ export default class Color extends LitElement {
   protected render() {
     const color = this.color ? NAME[this.color] : "";
     const bold = this.isBold ? ` ${NAME._isBold}` : "";
-    return html`
-      <span class="${color}${bold}">
-        <slot></slot>
-      </span>
-    `;
+    return html`<span class="${color}${bold}"><slot></slot></span>`;
   }
 }
