@@ -1,11 +1,11 @@
 @import "./config/scss/colors";
 @import "./config/scss/font";
 
-html,
-body {
+:host {
   background: var(--color-white);
   background-color: var(--color-white);
   color: var(--color-black);
+  display: block;
   font-family: var(--font-family);
   font-size: var(--font-size-1);
 }

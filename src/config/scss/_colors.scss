@@ -7,7 +7,7 @@ $gray: #9fa09e;
 $black: #0f1108;
 $white: #fbfffd;
 
-:root {
+:host {
   --color-primary_-3: #{adjust-color($primary, $lightness: -30%)};
   --color-primary_-2: #{adjust-color($primary, $lightness: -20%)};
   --color-primary_-1: #{adjust-color($primary, $lightness: -10%)};
@@ -74,7 +74,7 @@ $white: #fbfffd;
   // TODO: While inverting the pallete works ok, fine tuning this a bit more might be better
   // E.G. Tactile buttons are still tactile I guess but look stranger.
   // E.G. Yellow is a fucking disaster
-  :root {
+  :host {
     --color-primary_-3: #{adjust-color($_dark-primary, $lightness: 30%)};
     --color-primary_-2: #{adjust-color($_dark-primary, $lightness: 20%)};
     --color-primary_-1: #{adjust-color($_dark-primary, $lightness: 10%)};

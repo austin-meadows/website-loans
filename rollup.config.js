@@ -18,7 +18,9 @@ import sass from "sass";
 
 import buildHtml from "./src/html.js";
 
+// Clean build dir before starting a watch or build
 fs.rmSync("build", { force: true, recursive: true });
+// Versions output
 const { version } = JSON.parse(
   fs.readFileSync("package.json", { encoding: "utf-8" })
 );
@@ -30,13 +32,7 @@ export default {
     chunkFileNames: `[name]-${version}.js`,
     dir: "build",
     entryFileNames: `[name]-${version}.js`,
-    esModule: false,
-    manualChunks: {
-      lit: ["lit"],
-      router: ["navigo"],
-    },
-    sourcemap: false,
-    validate: true,
+    sourcemap: isWatch,
   },
   plugins: [
     pluginStylesLit({
@@ -64,6 +60,7 @@ export default {
         booleans_as_integers: true,
         drop_console: !isWatch,
         ecma: 2021,
+        hoist_funs: true,
         hoist_props: true,
         keep_fargs: false,
         module: true,
@@ -85,6 +82,10 @@ export default {
         comments: false,
         ecma: 2021,
         wrap_func_args: false,
+      },
+      mangle: {
+        module: true,
+        toplevel: true,
       },
       module: true,
     }),

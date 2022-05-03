@@ -1,20 +1,11 @@
 import fs from "fs";
 
-import autoprefixer from "autoprefixer";
 import { minify } from "html-minifier";
-import postcss from "postcss";
-import csso from "postcss-csso";
-import sass from "sass";
 
 const template = async ({ title }) => {
   const { version } = JSON.parse(
     fs.readFileSync("package.json", { encoding: "utf-8" })
   );
-  const { css } = sass.compile("src/index.scss");
-  const { css: processed } = await postcss([
-    csso({ removeComments: true }),
-    autoprefixer(),
-  ]).process(css, { from: undefined });
   return minify(
     `
 <!DOCTYPE html>
@@ -37,20 +28,6 @@ const template = async ({ title }) => {
     />
 
     <!---------- Preload ---------->
-    <link
-      rel="preload"
-      href="/lit-${version}.js"
-      as="script"
-      crossorigin="anonymous"
-      referrerpolicy="same-origin"
-    />
-    <link
-      rel="preload"
-      href="/router-${version}.js"
-      as="script"
-      crossorigin="anonymous"
-      referrerpolicy="same-origin"
-    />
     <link
       rel="preload"
       href="/app-${version}.js"
@@ -89,20 +66,7 @@ const template = async ({ title }) => {
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script type="application/javascript">
-      var preloadLink = document.createElement("link");
-      var preloadMap = {
-        "/": "Home-${version}.js",
-        "/sign-in": "SignIn-${version}.js",
-        "/storyboard": "Storyboard-${version}.js"
-      };
-      preloadLink.href = preloadMap[window.location.pathname.toLowerCase()];
-      preloadLink.rel = "preload";
-      preloadLink.as = "script";
-      preloadLink.setAttribute("crossorigin", "anonymous");
-      document.head.appendChild(preloadLink);
-    </script>
-    <style>${processed}</style>
+    <style>html,body{background-color:#fff}@media(prefers-color-scheme:dark){html,body{background-color:#000}}</style>
   </head>
   <body>
     <s-app></s-app>
