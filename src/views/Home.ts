@@ -60,8 +60,8 @@ export default class Home extends LitElement {
             color="${COLOR.YELLOW_0}"
             .icon="${faLandmarkDome}"
           >
-            <c-heading size="${SIZE.TWO_25}"
-              >$1.6 Trillion
+            <c-heading size="${SIZE.TWO_25}">
+              $1.7 Trillion
               <c-color color="${COLOR["GRAY_-2"]}" .isBold="${true}">+</c-color>
             </c-heading>
             <c-text size=${SIZE.ONE_25}>
@@ -70,7 +70,7 @@ export default class Home extends LitElement {
           </l-card>
           <l-card alignment="${CARD_ALIGNMENT.CENTER}" .icon="${faSackXmark}">
             <c-heading size="${SIZE.TWO_25}">
-              $30,000
+              $37,000
               <c-color color="${COLOR["GRAY_-2"]}" .isBold="${true}">+</c-color>
             </c-heading>
             <c-text size=${SIZE.ONE_25}> average loan balance </c-text>
@@ -107,6 +107,43 @@ export default class Home extends LitElement {
               <c-color color="${COLOR["GRAY_-2"]}" .isBold="${true}">+</c-color>
             </c-heading>
             <c-text size=${SIZE.ONE_25}>graduate with debt</c-text>
+          </l-card>
+          <l-card
+            alignment="${CARD_ALIGNMENT.CENTER}"
+            color="${COLOR.BLUE_0}"
+            .icon="${faGraduationCap}"
+          >
+            <c-heading size="${SIZE.TWO_25}">
+              <c-color color="${COLOR["GRAY_-2"]}" .isBold="${true}">~</c-color>
+              15%
+            </c-heading>
+            <c-text size=${SIZE.ONE_25}> of loans in default</c-text>
+          </l-card>
+          <l-card
+            alignment="${CARD_ALIGNMENT.CENTER}"
+            color="${COLOR.RED_0}"
+            .icon="${faGraduationCap}"
+          >
+            <c-heading size="${SIZE.TWO_25}">
+              <c-color color="${COLOR["GRAY_-2"]}" .isBold="${true}">~</c-color>
+              23%
+            </c-heading>
+            <c-text size=${SIZE.ONE_25}>
+              annual growth rate of the total loan debt balance
+            </c-text>
+          </l-card>
+          <l-card
+            alignment="${CARD_ALIGNMENT.CENTER}"
+            color="${COLOR.YELLOW_0}"
+            .icon="${faGraduationCap}"
+          >
+            <c-heading size="${SIZE.TWO_25}">
+              94%
+              <c-color color="${COLOR["GRAY_-2"]}" .isBold="${true}">+</c-color>
+            </c-heading>
+            <c-text size=${SIZE.ONE_25}>
+              borrow just for undergraduate education
+            </c-text>
           </l-card>
         </l-grid>
       </l-section>
