@@ -26,6 +26,7 @@ import "../components/button";
 import "../components/heading";
 import "../components/text";
 import "../layout/section";
+import "./Home/profile-scroll";
 
 @customElement("v-home")
 export default class Home extends LitElement {
