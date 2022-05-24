@@ -24,7 +24,7 @@ fs.rmSync("build", { force: true, recursive: true });
 const { version } = JSON.parse(
   fs.readFileSync("package.json", { encoding: "utf-8" })
 );
-const isWatch = process.env.WATCH === "true";
+const isWatch = process.env.ROLLUP_WATCH === "true";
 
 export default {
   input: "src/app.ts",
