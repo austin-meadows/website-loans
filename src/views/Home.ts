@@ -58,7 +58,7 @@ export default class Home extends LitElement {
         <l-grid>
           <l-card
             alignment="${CARD_ALIGNMENT.CENTER}"
-            color="${COLOR.YELLOW_0}"
+            color="${COLOR.PRIMARY_0}"
             .icon="${faLandmarkDome}"
           >
             <c-heading size="${SIZE.TWO_25}">
@@ -69,7 +69,11 @@ export default class Home extends LitElement {
               in just Federal student loan debt
             </c-text>
           </l-card>
-          <l-card alignment="${CARD_ALIGNMENT.CENTER}" .icon="${faSackXmark}">
+          <l-card
+            alignment="${CARD_ALIGNMENT.CENTER}"
+            color="${COLOR.YELLOW_0}"
+            .icon="${faSackXmark}"
+          >
             <c-heading size="${SIZE.TWO_25}">
               $37,000
               <c-color color="${COLOR["GRAY_-2"]}" .isBold="${true}">+</c-color>
@@ -122,7 +126,7 @@ export default class Home extends LitElement {
           </l-card>
           <l-card
             alignment="${CARD_ALIGNMENT.CENTER}"
-            color="${COLOR.RED_0}"
+            color="${COLOR.PRIMARY_0}"
             .icon="${faGraduationCap}"
           >
             <c-heading size="${SIZE.TWO_25}">
