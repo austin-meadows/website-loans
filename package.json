@@ -44,7 +44,7 @@
     "typescript": "4.7.2",
     "webpack": "5.72.1"
   },
-  "description": "Peer-to-peer student loan crowdfunding platform.",
+  "description": "Pear-to-Pear student loan crowdfunding platform.",
   "name": "website-loans",
   "packageManager": "yarn@3.2.1",
   "private": true,
@@ -53,6 +53,7 @@
     "lint": "eslint **/*.ts",
     "sdk": "yarn dlx @yarnpkg/sdks",
     "serve": "concurrently \"yarn _watch--build\" \"yarn _watch--serve\"",
+    "_update": "yarn upgrade-interactive && yarn dlx @yarnpkg/sdks && yarn dedupe",
     "_watch--build": "serve -s build",
     "_watch--serve": "rollup -c -w"
   },
