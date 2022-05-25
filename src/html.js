@@ -15,6 +15,22 @@ const template = async ({ title }) => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${title}</title>
     <base href="/" />
+    <script type="application/javascript">
+      const href = {
+        "/": "Home-${version}.js",
+        "/sign-in": "SignIn-${version}.js",
+        "/storyboard": "Storyboard-${version}.js"
+      }[window.location.pathname.toLowerCase()] || false;
+      if (href) {
+        const pre = document.createElement("link");
+        pre.setAttribute("href", href);
+        pre.setAttribute("rel", "preload");
+        pre.setAttribute("as", "script");
+        pre.setAttribute("crossorigin", "anonymous");
+        pre.setAttribute("referrerpolicy", "same-origin")
+        document.head.appendChild(pre);
+      }
+    </script>
     <!---------- Preconnects ---------->
     <link
       href="https://cdnjs.cloudflare.com"
