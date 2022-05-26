@@ -57,7 +57,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-lit", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:1.6.1"],\
             ["eslint-plugin-prettier", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:4.0.0"],\
             ["html-minifier", "npm:4.0.0"],\
-            ["lit", "npm:2.2.4"],\
+            ["lit", "npm:2.2.5"],\
             ["navigo", "npm:8.11.1"],\
             ["postcss", "npm:8.4.14"],\
             ["postcss-csso", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:6.0.0"],\
@@ -3423,10 +3423,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["lit", [\
-        ["npm:2.2.4", {\
-          "packageLocation": "./.yarn/cache/lit-npm-2.2.4-22566e151b-da491106bb.zip/node_modules/lit/",\
+        ["npm:2.2.5", {\
+          "packageLocation": "./.yarn/cache/lit-npm-2.2.5-7e2abe8256-0d3298ae9d.zip/node_modules/lit/",\
           "packageDependencies": [\
-            ["lit", "npm:2.2.4"],\
+            ["lit", "npm:2.2.5"],\
             ["@lit/reactive-element", "npm:1.3.0"],\
             ["lit-element", "npm:3.2.0"],\
             ["lit-html", "npm:2.2.0"]\
@@ -5655,7 +5655,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-lit", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:1.6.1"],\
             ["eslint-plugin-prettier", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:4.0.0"],\
             ["html-minifier", "npm:4.0.0"],\
-            ["lit", "npm:2.2.4"],\
+            ["lit", "npm:2.2.5"],\
             ["navigo", "npm:8.11.1"],\
             ["postcss", "npm:8.4.14"],\
             ["postcss-csso", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:6.0.0"],\
