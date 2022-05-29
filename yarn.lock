@@ -321,10 +321,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prettier@npm:2.6.1":
-  version: 2.6.1
-  resolution: "@types/prettier@npm:2.6.1"
-  checksum: b25ec46d18129fa40c1a1f42feb7406e8f19901ba5261ba3c71600ad14996ae07b4f4b727a9b83da673948011e59d870fc519166f05b5d49e9ad39db1aea8c93
+"@types/prettier@npm:2.6.3":
+  version: 2.6.3
+  resolution: "@types/prettier@npm:2.6.3"
+  checksum: e1836699ca189fff6d2a73dc22e028b6a6f693ed1180d5998ac29fa197caf8f85aa92cb38db642e4a370e616b451cb5722ad2395dab11c78e025a1455f37d1f0
   languageName: node
   linkType: hard
 
@@ -3735,9 +3735,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:*, rollup@npm:2.74.1":
-  version: 2.74.1
-  resolution: "rollup@npm:2.74.1"
+"rollup@npm:*, rollup@npm:2.75.3":
+  version: 2.75.3
+  resolution: "rollup@npm:2.75.3"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -3745,7 +3745,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: c34dc78317aa0a153010061e5954225b3e18f4013feb9c0476f6878dc3485ac765c28b7849441e4a2ab69c337892bc66399fb7d4b239b94f4758adfdb1f99440
+  checksum: ac33a2336df049f21dea64e4c9faee2551bddf2920944ea6214b2ed214f3861c9a4e1a8b7a32d2af6632f649a25a2bf4da8fad9f84f5093f2bf4d7e77933756b
   languageName: node
   linkType: hard
 
@@ -4506,7 +4506,7 @@ __metadata:
     "@rollup/plugin-typescript": 8.3.2
     "@types/eslint": 8.4.2
     "@types/html-minifier": 4.0.2
-    "@types/prettier": 2.6.1
+    "@types/prettier": 2.6.3
     "@types/rollup": 0.54.0
     "@types/typescript": 2.0.0
     "@typescript-eslint/eslint-plugin": 5.26.0
@@ -4529,7 +4529,7 @@ __metadata:
     postcss-csso: 6.0.0
     postcss-modules: ^4.3.1
     prettier: 2.6.2
-    rollup: 2.74.1
+    rollup: 2.75.3
     rollup-plugin-gzip: 3.0.1
     rollup-plugin-lit-css: 4.0.0
     rollup-plugin-minify-html-literals: 1.2.6
