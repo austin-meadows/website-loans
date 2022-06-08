@@ -206,17 +206,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-alias@npm:3.1.9":
-  version: 3.1.9
-  resolution: "@rollup/plugin-alias@npm:3.1.9"
-  dependencies:
-    slash: ^3.0.0
-  peerDependencies:
-    rollup: ^1.20.0||^2.0.0
-  checksum: cefae9dfb7c30f0dc78d24f4ad9ccb8a0878397b313c0fa9d0f519667394941c58a930d968d841e25aee43b0fb892d1e3f7edbb55e8197f191cce7da6a50b882
-  languageName: node
-  linkType: hard
-
 "@rollup/plugin-html@npm:0.2.4":
   version: 0.2.4
   resolution: "@rollup/plugin-html@npm:0.2.4"
@@ -4547,7 +4536,6 @@ __metadata:
   resolution: "website-loans@workspace:."
   dependencies:
     "@fortawesome/free-solid-svg-icons": 6.1.1
-    "@rollup/plugin-alias": 3.1.9
     "@rollup/plugin-html": 0.2.4
     "@rollup/plugin-json": ^4.1.0
     "@rollup/plugin-node-resolve": 13.3.0

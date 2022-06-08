@@ -34,7 +34,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@fortawesome/free-solid-svg-icons", "npm:6.1.1"],\
-            ["@rollup/plugin-alias", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:3.1.9"],\
             ["@rollup/plugin-html", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:0.2.4"],\
             ["@rollup/plugin-json", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:4.1.0"],\
             ["@rollup/plugin-node-resolve", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:13.3.0"],\
@@ -308,29 +307,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@pwrs/lit-css", "npm:2.0.0"],\
             ["string-to-template-literal", "npm:2.0.0"],\
             ["uglifycss", "npm:0.0.29"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@rollup/plugin-alias", [\
-        ["npm:3.1.9", {\
-          "packageLocation": "./.yarn/cache/@rollup-plugin-alias-npm-3.1.9-f58d88ad2a-cefae9dfb7.zip/node_modules/@rollup/plugin-alias/",\
-          "packageDependencies": [\
-            ["@rollup/plugin-alias", "npm:3.1.9"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:3.1.9", {\
-          "packageLocation": "./.yarn/__virtual__/@rollup-plugin-alias-virtual-083b8d629c/0/cache/@rollup-plugin-alias-npm-3.1.9-f58d88ad2a-cefae9dfb7.zip/node_modules/@rollup/plugin-alias/",\
-          "packageDependencies": [\
-            ["@rollup/plugin-alias", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:3.1.9"],\
-            ["@types/rollup", "npm:0.54.0"],\
-            ["rollup", "npm:2.75.6"],\
-            ["slash", "npm:3.0.0"]\
-          ],\
-          "packagePeers": [\
-            "@types/rollup",\
-            "rollup"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5698,7 +5674,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["website-loans", "workspace:."],\
             ["@fortawesome/free-solid-svg-icons", "npm:6.1.1"],\
-            ["@rollup/plugin-alias", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:3.1.9"],\
             ["@rollup/plugin-html", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:0.2.4"],\
             ["@rollup/plugin-json", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:4.1.0"],\
             ["@rollup/plugin-node-resolve", "virtual:a320c113e82b326004d2d4389e45f29ad192d2b52ed01bb93ef89b638495cbe46c7f5d507dfc3f109d3bbee05b538be3a6e9b2e12de010cb8a8acfb839db83da#npm:13.3.0"],\
