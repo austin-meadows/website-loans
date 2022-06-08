@@ -52,8 +52,8 @@ export default {
           .then((result) => result.css);
       },
     }),
+    pluginTypescript(),
     pluginResolve(),
-    pluginTypescript({ outputToFilesystem: false }),
     pluginJSON(),
     pluginTerser({
       compress: {
