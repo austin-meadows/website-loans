@@ -8,6 +8,15 @@
   "eslint.nodePath": ".yarn/sdks",
   "eslint.packageManager": "yarn",
   "files.eol": "\n",
+  "files.exclude": {
+    "**/*.scss.json": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/CVS": true,
+    "**/Thumbs.db": true
+  },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,

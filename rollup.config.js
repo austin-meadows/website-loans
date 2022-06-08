@@ -1,6 +1,7 @@
 import fs from "fs";
 import { brotliCompressSync } from "zlib";
 
+import pluginAlias from "@rollup/plugin-alias";
 import pluginHTML from "@rollup/plugin-html";
 import pluginJSON from "@rollup/plugin-json";
 import pluginResolve from "@rollup/plugin-node-resolve";
@@ -35,6 +36,16 @@ export default {
     sourcemap: isWatch,
   },
   plugins: [
+    pluginTypescript(),
+    pluginResolve(),
+    pluginAlias({
+      entries: [
+        {
+          find: "lit-html/lib/shady-render.js",
+          replacement: "node_modules/lit-html/lit-html.js",
+        },
+      ],
+    }),
     pluginStylesLit({
       include: ["**/*.scss"],
       transform: async (_, { filePath }) => {
@@ -52,8 +63,6 @@ export default {
           .then((result) => result.css);
       },
     }),
-    pluginTypescript(),
-    pluginResolve(),
     pluginJSON(),
     pluginTerser({
       compress: {

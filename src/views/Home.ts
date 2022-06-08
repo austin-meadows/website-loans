@@ -36,21 +36,23 @@ export default class Home extends LitElement {
         <l-row alignment="${ALIGNMENT.CENTER}">
           <c-heading .isBold=${true}>
             Help out your fellow ${" "}
-            <c-color color="${COLOR["PRIMARY_-1"]}"
-              ><c-icon .icon="${faSeedling}" size="${SIZE.THREE}"></c-icon>
+            <c-color color="${COLOR["PRIMARY_-1"]}">
+              <c-icon .icon="${faSeedling}" size="${SIZE.THREE}"></c-icon>
             </c-color>
             s
           </c-heading>
         </l-row>
         <l-row alignment="${ALIGNMENT.CENTER}">
           <c-heading size="${SIZE.TWO}">
-            <c-color color="${COLOR["PRIMARY_-1"]}" .isBold="${true}"
-              >Donate</c-color
-            >${" "}to your peers to help with their student loans.
+            <c-color color="${COLOR["PRIMARY_-1"]}" .isBold="${true}">
+              Donate
+            </c-color>
+            ${" "}to your peers to help with their student loans.
             <br />
-            <c-color color="${COLOR["PRIMARY_-1"]}" .isBold="${true}"
-              >List</c-color
-            >${" "} your own.
+            <c-color color="${COLOR["PRIMARY_-1"]}" .isBold="${true}">
+              List
+            </c-color>
+            ${" "} your own.
           </c-heading>
         </l-row>
       </l-section>
@@ -158,38 +160,39 @@ export default class Home extends LitElement {
         <l-grid columns="${GRID_COLUMNS.TWO}">
           <l-card type=${TYPE.FLAT} color=${COLOR.PRIMARY_1}>
             <c-heading .isBold=${true}>Donate</c-heading>
-
-            <c-text size=${SIZE.ONE_50}
-              >Contribute to students in a variety of ways!</c-text
-            >
+            <c-text size=${SIZE.ONE_50}>
+              Contribute to students in a variety of ways!
+            </c-text>
             <l-list
               columns=${LIST_COLUMNS.TWO}
               .items=${[
-                html`<c-color color=${COLOR["PRIMARY_-3"]}
-                    ><c-icon .icon="${faSchool}" size=${SIZE.ONE_75}></c-icon
-                  ></c-color>
+                html`<c-color color=${COLOR["PRIMARY_-3"]}>
+                    <c-icon .icon="${faSchool}" size=${SIZE.ONE_75}></c-icon>
+                  </c-color>
                   <c-text size=${SIZE.ONE_50}>By university</c-text>`,
-                html`<c-color color=${COLOR["PRIMARY_-3"]}
-                    ><c-icon .icon="${faBook}" size=${SIZE.ONE_75}></c-icon
-                  ></c-color>
+                html`<c-color color=${COLOR["PRIMARY_-3"]}>
+                    <c-icon .icon="${faBook}" size=${SIZE.ONE_75}></c-icon>
+                  </c-color>
                   <c-text size=${SIZE.ONE_50}> By field of interest </c-text>`,
-                html`<c-color color=${COLOR["PRIMARY_-3"]}
-                    ><c-icon .icon="${faUser}" size=${SIZE.ONE_75}></c-icon
-                  ></c-color>
+                html`<c-color color=${COLOR["PRIMARY_-3"]}>
+                    <c-icon .icon="${faUser}" size=${SIZE.ONE_75}></c-icon>
+                  </c-color>
                   <c-text size=${SIZE.ONE_50}>To individuals</c-text>`,
-                html`<c-color color=${COLOR["PRIMARY_-3"]}
-                    ><c-icon .icon="${faUsers}" size=${SIZE.ONE_75}></c-icon
-                  ></c-color>
+                html`<c-color color=${COLOR["PRIMARY_-3"]}>
+                    <c-icon .icon="${faUsers}" size=${SIZE.ONE_75}></c-icon>
+                  </c-color>
                   <c-text size=${SIZE.ONE_50}>To many at once</c-text>`,
-                html`<c-color color=${COLOR["PRIMARY_-3"]}
-                    ><c-icon .icon="${faShuffle}" size=${SIZE.ONE_75}></c-icon
-                  ></c-color>
+                html`<c-color color=${COLOR["PRIMARY_-3"]}>
+                    <c-icon .icon="${faShuffle}" size=${SIZE.ONE_75}></c-icon>
+                  </c-color>
                   <c-text size=${SIZE.ONE_50}>Randomly</c-text>`,
               ]}
             >
             </l-list>
           </l-card>
-          <l-card type=${TYPE.FLAT} color=${COLOR.GRAY_4}></l-card>
+          <l-card type=${TYPE.FLAT} color=${COLOR.GRAY_5}>
+            <h-scroll></h-scroll>
+          </l-card>
         </l-grid>
       </l-section>
     `;
