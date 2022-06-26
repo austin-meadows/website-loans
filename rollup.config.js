@@ -30,6 +30,7 @@ export default {
   input: "src/app.ts",
   output: {
     chunkFileNames: `[name]-${version}.js`,
+    compact: true,
     dir: "build",
     entryFileNames: `[name]-${version}.js`,
     sourcemap: isWatch,
